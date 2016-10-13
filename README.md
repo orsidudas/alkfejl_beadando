@@ -1,8 +1,5 @@
 #Dokumentáció
-======
-
 ##Filmadatbázis
-------
 
 Készítette: Dudás Orsolya (PJ1L4K)
 
