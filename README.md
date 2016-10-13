@@ -3,8 +3,8 @@
 
 Készítette: Dudás Orsolya (PJ1L4K)
 
-###Követelmény-analízis
-
+##Követelmény-analízis
+###Követelmények összegyűjtése
 **Funkcionális követelmények**
 + Legyen lehetőség regisztrációra.
 + Regisztrálást követően a felhasználó be tudjon lépni, illetve ki tudjon jelentkezni.
@@ -21,7 +21,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 + Használhatóság: Könnyű áttekinthetőség, ésszerű elrendezés, könnyen kezelhetőség
 + Megbízhatóság: jelszóval védett funkciók, csak regisztrált felhasználó tudjon belépni
 
-**Szakterületi fogalomjegyzék**
+###Szakterületi fogalomjegyzék
 
 + **film:** olyan objektum, melynek, címe, rendezője, műfaja, illetve értékelése lehet
 + **értékelés:** 1-től 10-ig terjedő a felhasználó által adott egész szám
@@ -42,27 +42,34 @@ Készítette: Dudás Orsolya (PJ1L4K)
 + **Vígjáték:** A vígjáték lazán szőtt cselekménye túlzásba vitt helyzetekkel és akciókkal, karikírozott nyelvvel és esendő karakterekkel dolgozik.
 + **Western:** Műfaji ismérve szerint a western az amerikai Vadnyugaton játszódó kalandfilm.
 
-###Szerepkörök, használatieset-modell
+###Használatieset-modell
 
-**Vendég:** Csak a publikus oldalakat éri el
-+ Főoldal
-+ Bejelentkezés
-+ Regisztráció
+**Szerepkörök**
 
-**Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
-+ Új film felvétele
-+ Listában szereplő film megtekintése
-+ Listában szereplő film szerkesztése
-+ Listában szereplő film törlése
-+ Film értékelése
-+ Kijelentkezés
++ **Vendég:** Csak a publikus oldalakat éri el
+  + Főoldal
+  + Bejelentkezés
+  + Regisztráció
+
++ **Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
+  + Új film felvétele
+  + Listában szereplő film megtekintése
+  + Listában szereplő film szerkesztése
+  + Listában szereplő film törlése
+  + Film értékelése
+  + Kijelentkezés
+  
+**Használati eset diagramok**
 
 ![database](images/haszn_diagr_1.png)
 
-**Új film felvételének folyamata:**
+**Folyamatok pontos menete**
+
+Új film felvételének folyamata:
 
 ![database](images/folyamat_ujfilm.png)
 
+##Tervezés
 ###Oldaltérkép:
 
 + **Publikus:**
