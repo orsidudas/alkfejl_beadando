@@ -80,6 +80,12 @@ Készítette: Dudás Orsolya (PJ1L4K)
       + Film értékelése
   + Kijelentkezés
 
+###Végpontok
+
+###Oldalvázlatok
+
+![database](images/Főoldal2.jpg)
+
 TERVEZÉS LÉPÉSEI
 követelmények összegyűjtése, követelmény-analízis
 szerepkörök, használati esetek, folyamatok meghatározása
