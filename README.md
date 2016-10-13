@@ -24,19 +24,19 @@ Készítette: Dudás Orsolya (PJ1L4K)
 **Szakterületi fogalomjegyzék**
 
 + **film:** olyan objektum, melynek, címe, rendezője, műfaja, illetve értékelése lehet
-+ **értékelés:** 1-től 10-ig terjedő skálán a felhasználó által adott érték
++ **értékelés:** 1-től 10-ig terjedő a felhasználó által adott egész szám
 + **lista:** filmek gyűjteménye
 + **módosítás:** film adott tulajdonságainak megváltoztatása
 + **törlés:** film eltávolítása a listából
 
 **Filmműfajok:**
 
-+ **Akciófilm:** Az akciófilm a tömegfilm egyik jellegzetes műfaja, melyekben hagyományosan megtalálhatók a robbanások, az ökölharcok, a lövöldözések, a lovas és az autós üldözések.
-+ **Melodráma:** A szerelmi vetélkedésről, férfi és nő testi –lelki konfliktusairól szól (végzetes szerelmi szenvedély) – váratlan cseleményfordulatok, nem ritkán tragikus vég jellemzi
-+ **Fantasy:** A fantasztikus filmek jellegzetes alműfaja, mely mítikus, képzeletbeli helyszíneken játszódó hősi kalandokat mesél el, emberfeletti és földöntúli figurák főszereplésével.
++ **Akciófilm:** Az akciófilmekben hagyományosan megtalálhatók a robbanások, az ökölharcok, a lövöldözések, a lovas és az autós üldözések.
++ **Melodráma:** A melodrámát nem ritkán tragikus vég jellemzi, szerelmi vetélkedésről, férfi és nő (szerelmi) konfliktusairól szól.
++ **Fantasy:** Mítikus, képzeletbeli helyszíneken játszódó hősi kalandokat mesél el, emberfeletti és földöntúli figurák főszereplésével.
 + **Horror:** A horrorfilm olyan alkotás, melyben félelem- és borzalomérzetet kívánnak kelteni a nézőben.
-+ **Kaland:**  A kalandfilm népszerű tömegfilmműfaj, melynek izgalmas eseményekben bővelkedő történetei a néző világától időben, térben távol játszódnak le. 
-+ **Krimi:** Egy vagy több összefüggű bűncselekmény elkövetését és/vagy felderítését bemutató alkotás;
++ **Kaland:**  A kalandfilmek izgalmas eseményekben bővelkedő történetei a néző világától időben, térben távol játszódnak le. 
++ **Krimi:** Egy vagy több összefüggű bűncselekmény elkövetését és/vagy felderítését bemutató alkotás.
 + **Romantikus:** A vonzalmat, a kibontakozó vagy megújuló szerelmet két ember kapcsolatán keresztül bemutató mű.
 + **Sorozatok:** Több, nem ritkán 20-40 epizódból álló film.
 + **Vígjáték:** A vígjáték lazán szőtt cselekménye túlzásba vitt helyzetekkel és akciókkal, karikírozott nyelvvel és esendő karakterekkel dolgozik.
@@ -51,9 +51,9 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
 + Új film felvétele
-+ Meglévő film megtekintése
-+ Meglévő film szerkesztése
-+ Meglévő film törlése
++ Listában szereplő film megtekintése
++ Listában szereplő film szerkesztése
++ Listában szereplő film törlése
 + Film értékelése
 + Kijelentkezés
 
