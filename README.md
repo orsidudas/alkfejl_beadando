@@ -17,9 +17,9 @@ Készítette: Dudás Orsolya (PJ1L4K)
   + új elem felvétele után a felhasználó visszakapja egy listában az eddig felvett elemeit, és azok leírását
 
 **Nem funkcionális követelmények:**
-+ Könnyű áttekinthetőség: Filmműfaj szerinti csoportosítás
-+ Használhatóság: Könnyű áttekinthetőség, ésszerű elrendezés, könnyen kezelhetőség
-+ Megbízhatóság: jelszóval védett funkciók, csak regisztrált felhasználó tudjon belépni
++ Könnyű áttekinthetőség: filmműfaj szerinti csoportosítás
++ Használhatóság: könnyű áttekinthetőség, felhasználóbarát kinézet
++ Megbízhatóság: csak regisztrált felhasználó tudjon belépni
 
 ###Szakterületi fogalomjegyzék
 
