@@ -67,10 +67,10 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 Új film felvételének folyamata:
 
-1. A felhasználó az oldalra érkezve, ha nem bejelentkezett felhasználó, akkor bejelentkezik
-2. Bejelentkezés után a főoldalra kerül, ahol tovább lép a filmek megtekintésére
+1. A felhasználó az oldalra érkezve, ha nem bejelentkezett felhasználó, bejelentkezik
+2. Ekkor a Főoldalra, majd a Filmek megtekintése oldalra kerül
 3. A listaoldalon az "Új film felvitele" gombra kattint
-4. Ekkor a Felvitel oldalon felviszi az adatokat, elmenti, ezzel új filmet adva hozzá a listához.
+4. Ekkor a "Filmek felvétele" oldalon felviszi az adatokat, elmenti, ezzel új filmet adva hozzá a listához.
 
 ![database](images/folyamat_ujfilm.png)
 
