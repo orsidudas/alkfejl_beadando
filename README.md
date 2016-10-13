@@ -70,7 +70,9 @@ Készítette: Dudás Orsolya (PJ1L4K)
 ![database](images/folyamat_ujfilm.png)
 
 ##Tervezés
-###Oldaltérkép:
+###Architektúra terv
+
+**Oldaltérkép:**
 
 + **Publikus:**
   + Főoldal
@@ -87,21 +89,11 @@ Készítette: Dudás Orsolya (PJ1L4K)
       + Film értékelése
   + Kijelentkezés
 
-###Végpontok
+**Végpontok**
 
-###Oldalvázlatok
+###Felhasználóifelület-modell
+
+**Oldalvázlatok**
 
 ![database](images/Főoldal2.jpg)
-
-TERVEZÉS LÉPÉSEI
-követelmények összegyűjtése, követelmény-analízis
-szerepkörök, használati esetek, folyamatok meghatározása
-(oldalfunkciók)
-oldalvázlatok készítése
-site struktúra (oldaltérkép)
-architektúra terv
-adatbázis tervezése
-designtervek készítése
-
-
 
