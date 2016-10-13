@@ -24,7 +24,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 ###Szakterületi fogalomjegyzék
 
 + **film:** olyan objektum, melynek, címe, rendezője, műfaja, illetve értékelése lehet
-+ **értékelés:** 1-től 10-ig terjedő a felhasználó által adott egész szám
++ **értékelés:** a felhasználó által adott 1-től 10-ig terjedő egész szám
 + **lista:** filmek gyűjteménye
 + **módosítás:** film adott tulajdonságainak megváltoztatása
 + **törlés:** film eltávolítása a listából
