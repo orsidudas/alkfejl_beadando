@@ -132,3 +132,11 @@ Készítette: Dudás Orsolya (PJ1L4K)
 **Adatmodell**
 
 ![database](images/adatk.png)
+
+
+##Források
+
++ https://github.com/horvathgyozo/alkfejl_minta
++ http://webprogramozas.inf.elte.hu/alkfejl.php
++ http://ade.web.elte.hu/wabp/lecke2_lap1.html
++ http://cinema.gportal.hu/gindex.php?pg=36414110
