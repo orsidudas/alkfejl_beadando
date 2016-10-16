@@ -127,3 +127,8 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 ![database](images/film2.jpg)
 
+###Osztálymodell
+
+**Adatmodell**
+
+![database](images/adatk.jpg)
