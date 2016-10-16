@@ -23,7 +23,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 ###Szakterületi fogalomjegyzék
 
-+ **film:** olyan objektum, melynek, címe, rendezője, műfaja, illetve értékelése lehet
++ **film:** olyan objektum, melynek, címe, rendezője, leírása, műfaja, illetve értékelése lehet
 + **értékelés:** a felhasználó által adott 1-től 10-ig terjedő egész szám
 + **lista:** filmek gyűjteménye
 + **módosítás:** film adott tulajdonságainak megváltoztatása
@@ -115,5 +115,12 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Oldalvázlatok**
 
+**Főoldal**
 ![database](images/Főoldal2.jpg)
+
+**Regisztrációs oldal**
+![database](images/reg_page.jpg)
+
+**Kiválasztott film oldala**
+![database](images/film.jpg)
 
