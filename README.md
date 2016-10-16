@@ -116,11 +116,14 @@ Készítette: Dudás Orsolya (PJ1L4K)
 **Oldalvázlatok**
 
 **Főoldal**
+
 ![database](images/Főoldal2.jpg)
 
 **Regisztrációs oldal**
+
 ![database](images/reg_page.jpg)
 
 **Kiválasztott film oldala**
+
 ![database](images/film.jpg)
 
