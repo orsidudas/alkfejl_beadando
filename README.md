@@ -96,6 +96,21 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Végpontok**
 
++ **GET/**: főoldal
++ **GET/login**: bejelentkező oldal
++ **POST/login**: bejelentkező adatok felküldése
++ **GET/login/signup**: regisztrációs oldal
++ **POST/login/signup**: regisztrációs adatok felküldése
++ **GET/logout**: kijelentkező oldal
++ **GET/movies/list**: filmlista oldal
++ **GET/movies/new**: új film felvétele
++ **POST/movies/new**: új film felvételéhez szükséges adatok felküldése
++ **GET/movies/id**: kiválasztott film megtekintése
++ **POST/movies/id**: film értékelésének felvitele
++ **GET/movies/delete=id**: kiválasztott film törlése
++ **GET/movies/edit=id**: film módosítása
++ **POST/movies/edit=id**: film módosítása, adatok felküldése
+
 ###Felhasználóifelület-modell
 
 **Oldalvázlatok**
