@@ -131,4 +131,4 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Adatmodell**
 
-![database](images/adatk.jpg)
+![database](images/adatk.png)
