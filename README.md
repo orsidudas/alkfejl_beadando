@@ -125,5 +125,5 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Kiválasztott film oldala**
 
-![database](images/film.jpg)
+![database](images/film2.jpg)
 
