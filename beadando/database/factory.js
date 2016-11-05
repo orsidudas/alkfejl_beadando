@@ -28,3 +28,11 @@ Factory.blueprint('App/Model/User', (fake) => {
     password: fake.password()
   }
 })
+
+
+Factory.blueprint('App/Model/Movie', (fake) => {
+  return {
+    title: fake.sentence(),
+    content: fake.paragraph()
+  }
+})

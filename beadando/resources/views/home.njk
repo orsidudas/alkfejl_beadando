@@ -1,5 +1,18 @@
 {% extends 'master' %}
 
 {% block content %}
-  <h2> Filmlista helye </h2>
+  <div>
+    <a href="movie/create" class="btn btn-success btn-block"> Add New Movie </a>
+    <hr>
+  </div>
+  <div class="movies-wrapper">
+    {% for movie in movies %} 
+      <div class="movies">
+        <h2><a href="movie/{{ movie.id }}"> {{ movie.title }} </a></h2> 
+        <p> {{ movie.content | truncate(150)}} </p> <!--we use the truncate filter on the post content by limit the characters count to 150.-->
+      </div>
+    {% else %}
+      <h2> No movies found </h2>
+    {% endfor %}
+  </div>
 {% endblock %}
