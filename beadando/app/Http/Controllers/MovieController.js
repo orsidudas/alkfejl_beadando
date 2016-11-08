@@ -1,7 +1,9 @@
 'use strict'
 
 const Movie = use('App/Model/Movie')
+const Category = use('App/Model/Category')
 const Validator = use('Validator')
+const Database = use('Database')
 
 class MovieController {
 
@@ -11,22 +13,26 @@ class MovieController {
   }
   
   * create (request, response) {
-    yield response.sendView('createMovie')
+    const categories = yield Category.all()
+    yield response.sendView('createMovie', {
+      categories: categories.toJSON()
+    });
   }
 
   * store (request, response) {
-    const movieData = request.only('title', 'content') 
+    const movieData = request.only('title', 'content', 'category_id') 
 
     const rules = {
       title: 'required', //kotelezo
-      content: 'required'
+      content: 'required',
+      category_id: 'required'
     }
 
     const validation = yield Validator.validate(movieData, rules) 
 
     if (validation.fails()) {
       yield request
-        .withOnly('title', 'content')
+         .withOnly('title', 'content', 'category_id')
         .andWith({ errors: validation.messages() })
         .flash() 
 

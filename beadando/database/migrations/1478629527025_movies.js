@@ -9,6 +9,7 @@ class MoviesTableSchema extends Schema {
       table.increments()
       table.string('title')
       table.text('content')
+      table.integer('category_id').unsigned().references('id').inTable('categories')
       table.timestamps()
     })
   }
@@ -20,4 +21,3 @@ class MoviesTableSchema extends Schema {
 }
 
 module.exports = MoviesTableSchema
-
