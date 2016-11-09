@@ -50,6 +50,53 @@ class MovieController {
     yield movie.related('category').load();
     yield response.sendView('showMovie', { movie: movie.toJSON() })
   }
+
+  * edit (request, response) {
+    const categories = yield Category.all()
+    const id = request.param('id');
+    const movie = yield Movie.find(id);
+
+    yield response.sendView('editMovie', {
+      categories: categories.toJSON(),
+      movie: movie.toJSON()
+    });
+  }
+
+    * postEdit (request, response) {
+    const movieData = request.only('title','director', 'content', 'category_id') 
+
+    const rules = {
+      title: 'required', //kotelezo
+      director: 'required',
+      content: 'required',
+      category_id: 'required'
+    };
+
+    const validation = yield Validator.validate(movieData, rules)
+
+    if (validation.fails()) {
+      yield request
+        .withOnly('title','director', 'content', 'category_id')
+        .andWith({errors: validation.messages()})
+        .flash()
+
+      response.redirect('back')
+      return
+    }
+
+    const id = request.param('id');
+    const movie = yield Movie.find(id);
+
+    
+    movie.title = movieData.title;
+    movie.director = movieData.director; 
+    movie.content = movieData.content;
+    movie.category_id = movieData.category_id;
+
+    yield movie.save()
+    
+    response.redirect('/')
+  }
 }
 
 module.exports = MovieController

@@ -1,0 +1,66 @@
+{% extends "master" %}
+
+{% block content %}
+<h2>Film módosítása</h2>
+
+{% if old('errors') %}
+<div class="panel panel-danger">
+  <div class="panel-heading">
+    <h3 class="panel-title">Hibák</h3>
+  </div>
+  <div class="panel-body">
+    <ul>
+      {% for error in old('errors') %}
+      <li>{{ error.message }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+</div>
+{% endif %}
+
+
+<form class="form-horizontal" method="post">
+
+    {{ csrfField }}
+
+    <div class="form-group">
+    <label for="name" class="col-lg-2 control-label">Cím</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="title" name="title" placeholder="Cím" value="{{ movie.title }}">
+    </div>
+    </div>
+
+    <div class="form-group">
+    <label for="name" class="col-lg-2 control-label">Rendező</label>
+    <div class="col-lg-10">
+      <input type="text" class="form-control" id="director" name="director" placeholder="Rendező" value="{{ movie.director }}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="name" class="col-lg-2 control-label">Leírás</label>
+    <div class="col-lg-10">
+      <input type="textarea" class="form-control" id="content" name="content" placeholder="Leírás" value="{{ movie.content }}">
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="category_id" class="col-lg-2 control-label">Kategória</label>
+    <div class="col-lg-10">
+      <select class="form-control" id="category_id" name="category_id">
+        {% for category in categories %}
+        <option value="{{ category.id }}"
+          {% if category.id == movie.category_id %}
+          selected
+          {% endif %}
+        >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+    {{ form.submit('Mentés', 'publish', { class: 'btn btn-primary btn-block' }) }}
+
+</form>
+
+{% endblock %}
