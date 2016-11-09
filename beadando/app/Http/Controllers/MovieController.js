@@ -20,10 +20,11 @@ class MovieController {
   }
 
   * store (request, response) {
-    const movieData = request.only('title', 'content', 'category_id') 
+    const movieData = request.only('title','director', 'content', 'category_id') 
 
     const rules = {
       title: 'required', //kotelezo
+      director: 'required',
       content: 'required',
       category_id: 'required'
     }
@@ -32,7 +33,7 @@ class MovieController {
 
     if (validation.fails()) {
       yield request
-         .withOnly('title', 'content', 'category_id')
+         .withOnly('title','director', 'content', 'category_id')
         .andWith({ errors: validation.messages() })
         .flash() 
 
@@ -46,6 +47,7 @@ class MovieController {
   
   * show (request, response) {
     const movie = yield Movie.find(request.param('id'))
+    yield movie.related('category').load();
     yield response.sendView('showMovie', { movie: movie.toJSON() })
   }
 }

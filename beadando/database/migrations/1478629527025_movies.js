@@ -7,9 +7,11 @@ class MoviesTableSchema extends Schema {
   up () {
     this.create('movies', (table) => {
       table.increments()
-      table.string('title')
-      table.text('content')
-      table.integer('category_id').unsigned().references('id').inTable('categories')
+      table.string('title') //cim
+      table.string('director') //rendezo
+      table.text('content') //leiras
+      table.integer('category_id').unsigned().references('id').inTable('categories') //mufaj
+      table.integer('rating') //ertekeles
       table.timestamps()
     })
   }

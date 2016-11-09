@@ -13,12 +13,17 @@
     {{ csrfField }}
 
     <fieldset class="form-group">
-      {{ form.label('Movie Title') }}
+      {{ form.label('Cím') }}
       {{ form.text('title', null, { class: 'form-control' }) }}
     </fieldset>
 
     <fieldset class="form-group">
-      {{ form.label('Description') }}
+      {{ form.label('Rendező') }}
+      {{ form.text('director', null, { class: 'form-control' }) }}
+    </fieldset>
+
+    <fieldset class="form-group">
+      {{ form.label('Leírás') }}
       {{ form.textarea('content', null, { class: 'form-control' }) }}
     </fieldset>
 
