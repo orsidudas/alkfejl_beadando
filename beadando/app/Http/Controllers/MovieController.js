@@ -8,8 +8,14 @@ const Database = use('Database')
 class MovieController {
 
   * index (request, response) {
+    const categories = yield Category.all()
+    const id = request.param('id');
     const movies = yield Movie.query().orderBy('id', 'desc').fetch() //utoljara hozzaadott a legtetejen
-    yield response.sendView('home', { movies: movies.toJSON() })
+    
+    yield response.sendView('home', {
+      categories: categories.toJSON(),
+      movies: movies.toJSON()
+    });
   }
   
   * create (request, response) {
@@ -96,6 +102,25 @@ class MovieController {
     yield movie.save()
     
     response.redirect('/')
+  }
+
+  * delete (request, response) {
+    const id = request.param('id');
+    const movie = yield Movie.find(id);
+
+    yield movie.delete()
+    response.redirect('/')
+  }
+
+  * category (request, response) {
+    const id = request.param('id');
+    const category = yield Category.find(id);    
+    const movies = yield category.movies().fetch();
+    
+    yield response.sendView('showCategory', {
+      category: category.toJSON(),
+      movies: movies.toJSON()
+    });
   }
 }
 

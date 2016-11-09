@@ -8,6 +8,9 @@ Route.post('/movie', 'MovieController.store')
 Route.get('/movie/:id', 'MovieController.show')
 Route.get('/movie/:id/edit', 'MovieController.edit')
 Route.post('/movie/:id/edit', 'MovieController.postEdit')
+Route.get('/movie/:id/delete', 'MovieController.delete')
+Route.get('/:id/category', 'MovieController.category')
+
 
 Route.on('/registration').render('registration')
 Route.on('/login').render('login')
