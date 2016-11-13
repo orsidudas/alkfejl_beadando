@@ -12,5 +12,6 @@ Route.get('/movie/:id/delete', 'MovieController.delete')
 Route.get('/:id/category', 'MovieController.category')
 
 
-Route.on('/registration').render('registration')
+Route.get('/registration', 'UserController.registration')
+Route.post('/registration', 'UserController.postRegistration')
 Route.on('/login').render('login')
