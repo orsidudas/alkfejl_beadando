@@ -7,6 +7,10 @@ const Hash = use('Hash')
 
 class UserController {
     * registration(request, response) {
+    const isLoggedIn = yield request.auth.check()
+    if (isLoggedIn) {
+      response.redirect('/')
+    }
 
     yield response.sendView('registration')
   }
@@ -80,6 +84,11 @@ class UserController {
     }
   }
 
+
+    *logout (request, response) {
+        yield request.auth.logout()
+        response.redirect('/')
+    }
 
 }
 
