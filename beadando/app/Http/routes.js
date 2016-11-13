@@ -14,4 +14,6 @@ Route.get('/:id/category', 'MovieController.category')
 
 Route.get('/registration', 'UserController.registration')
 Route.post('/registration', 'UserController.postRegistration')
-Route.on('/login').render('login')
+
+Route.get('/login', 'UserController.login')
+Route.post('/login', 'UserController.postLogin')

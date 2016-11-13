@@ -45,6 +45,42 @@ class UserController {
     response.redirect('/')
   }
 
+  * login(request, response) {
+    const isLoggedIn = yield request.auth.check()
+    if (isLoggedIn) {
+      response.redirect('/')
+    }
+
+    yield response.sendView('login')
+  }
+
+  * postLogin (request, response) {
+    const email = request.input('email')
+    const password = request.input('password')
+
+    try {
+      const login = yield request.auth.attempt(email, password) 
+
+      if (login) {
+        response.redirect('/')
+        return
+      }
+    } 
+    catch (err) {
+      yield request
+        .withOnly('email', 'password') 
+        .andWith({errors: [
+          {
+            message: 'Invalid credentails'
+          }
+        ]})
+        .flash()
+
+      response.redirect('/login')
+    }
+  }
+
+
 }
 
 module.exports = UserController
