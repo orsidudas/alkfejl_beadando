@@ -11,7 +11,6 @@ class MoviesTableSchema extends Schema {
       table.string('director') //rendezo
       table.text('content') //leiras
       table.integer('category_id').unsigned().references('id').inTable('categories') //mufaj
-      table.integer('rating_id') //ertekeles
       table.timestamps()
     })
   }

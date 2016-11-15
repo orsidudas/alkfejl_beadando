@@ -11,6 +11,7 @@ class RatingsTableSchema extends Schema {
       table.integer('value')  //osszertek
       table.integer('count')  //osszes ertekelo szama
       table.integer('result') //eredmeny
+      table.integer('movie_id').unsigned().references('id').inTable('movies') //film
     })
   }
 

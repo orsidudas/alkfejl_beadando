@@ -1,7 +1,11 @@
 {% extends 'master' %}
 
 {% block content %}
-<form class="form-horizontal">
+<form class="form-horizontal" method="post">
+
+{{ csrfField }}
+
+
   <fieldset>
   <div class="post">
     <div>
@@ -13,11 +17,9 @@
     <p>Rendező: {{ movie.director }}</p>
     <h5> Leírás </h5>
     <p>{{ movie.content }}</p>
-  </div>
-   <div class="form-group">
-   <label for="rating" class="col-lg-2 control-label">Értékelés</label>
-      <div class="col-lg-10">
-        <select class="form-control" id="rating">
+
+    <label for="rating" class="col-lg-2 control-label">Értékelés</label>
+      <select class="form-control" id="rating" name="rating">
           <option>1</option>
           <option>2</option>
           <option>3</option>
@@ -28,12 +30,10 @@
           <option>8</option>
           <option>9</option>
           <option>10</option>
-        </select>
-    </div>
-  </div>
+      </select>
 
   <div class="btn-group btn-group-justified">
-  <a href="/movie/{{movie.id}}/rating" class="btn btn-default">Értékelem</a>
+  <button type="submit" class="btn btn-primary">Értékelés</button>
   <a href="/movie/{{movie.id}}/edit" class="btn btn-default">Szerkesztés</a>
   <a href="/movie/{{movie.id}}/delete" class="btn btn-default">Törlés</a>
 </div>

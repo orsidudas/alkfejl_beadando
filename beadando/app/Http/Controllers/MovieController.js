@@ -49,12 +49,11 @@ class MovieController {
     }
 
     const rating = yield Rating.create({ value: 0, count: 0, result: 0 })
-
     const movie = yield Movie.create(movieData) 
         
-    movie.rating_id = rating.id;
+    rating.movie_id = movie.id;
 
-    yield movie.save()
+    yield rating.save()
 
     response.redirect('/')
   }
@@ -129,6 +128,25 @@ class MovieController {
       category: category.toJSON(),
       movies: movies.toJSON()
     });
+  }
+
+
+  * rating (request, response){
+    const id = request.param('id'); //film id-ja
+    const rr = request.all()
+    const ratingNumber = rr.rating; 
+
+    const movie = yield Movie.find(id);
+    const movieRating = yield movie.rating().fetch()
+
+    movieRating.value = +movieRating.value + +ratingNumber;  //ha nem teszel pluszt, akkor stringkent egymas melle irja
+    movieRating.count = movieRating.count + 1;
+    movieRating.result = movieRating.value/movieRating.count;
+
+    yield movieRating.save();
+
+    response.redirect('/')
+
   }
 
 
