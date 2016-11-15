@@ -18,3 +18,5 @@ Route.post('/registration', 'UserController.postRegistration')
 Route.get('/login', 'UserController.login')
 Route.post('/login', 'UserController.postLogin')
 Route.get('/logout', 'UserController.logout')
+
+Route.get('/movie/:id/rating', 'MovieController.show')

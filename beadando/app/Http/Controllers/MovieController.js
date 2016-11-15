@@ -2,6 +2,7 @@
 
 const Movie = use('App/Model/Movie')
 const Category = use('App/Model/Category')
+const Rating = use('App/Model/Rating')
 const Validator = use('Validator')
 const Database = use('Database')
 
@@ -47,7 +48,14 @@ class MovieController {
       return
     }
 
-    yield Movie.create(movieData) 
+    const rating = yield Rating.create({ value: 0, count: 0, result: 0 })
+
+    const movie = yield Movie.create(movieData) 
+        
+    movie.rating_id = rating.id;
+
+    yield movie.save()
+
     response.redirect('/')
   }
   
@@ -122,6 +130,8 @@ class MovieController {
       movies: movies.toJSON()
     });
   }
+
+
 }
 
 module.exports = MovieController
