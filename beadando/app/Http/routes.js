@@ -20,3 +20,5 @@ Route.post('/login', 'UserController.postLogin')
 Route.get('/logout', 'UserController.logout')
 
 Route.post('/movie/:id', 'MovieController.rating').middleware('auth')
+
+Route.get('/profile', 'UserController.profile').middleware('auth')

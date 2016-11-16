@@ -90,6 +90,18 @@ class UserController {
         response.redirect('/')
     }
 
+
+    * profile(request, response) {
+      const userId = request.currentUser.id
+      const user = yield User.find(userId)
+      const movies = yield user.movies().fetch();
+    
+      yield response.sendView('profile', {
+        movies: movies.toJSON(),
+        user: request.currentUse
+      });
+    }
+
 }
 
 module.exports = UserController
