@@ -10,10 +10,14 @@
     <div class="header clearfix">
       <nav>
         <ul class="nav nav-pills pull-xs-right">
-          <li class="nav-item"><a href="/" class="nav-link">Főoldal</a></li>
+        <li class="nav-item"><a href="/" class="nav-link">Főoldal</a></li>
+        {% if currentUser %}
+        <li class="nav-item"><a href="/logout" class="nav-link">Kijelentkezés</a></li>
+        <li class="nav-item"> Bejelentkezve:  {{ currentUser.username }}</li>
+         {% else %}          
           <li class="nav-item"><a href="/registration" class="nav-link">Regisztráció</a></li>
           <li class="nav-item"><a href="/login" class="nav-link">Bejelentkezés</a></li>
-          <li class="nav-item"><a href="/logout" class="nav-link">Kijelentkezés</a></li>
+           {% endif %}
         </ul>
         <h3 class="text-muted"> Filmadatbázis </h3>
       </nav>

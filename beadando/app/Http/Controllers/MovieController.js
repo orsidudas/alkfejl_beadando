@@ -49,6 +49,8 @@ class MovieController {
     }
 
     const rating = yield Rating.create({ value: 0, count: 0, result: 0 })
+
+    movieData.user_id = request.currentUser.id
     const movie = yield Movie.create(movieData) 
         
     rating.movie_id = movie.id;
@@ -60,8 +62,13 @@ class MovieController {
   
   * show (request, response) {
     const movie = yield Movie.find(request.param('id'))
+    const rating = yield movie.rating().fetch()
     yield movie.related('category').load();
-    yield response.sendView('showMovie', { movie: movie.toJSON() })
+    yield response.sendView('showMovie', { 
+      movie: movie.toJSON(),
+      rating : rating.toJSON(),
+      user: request.currentUser
+    })    
   }
 
   * edit (request, response) {
@@ -69,9 +76,15 @@ class MovieController {
     const id = request.param('id');
     const movie = yield Movie.find(id);
 
+    if (request.currentUser.id !== movie.user_id) {
+       response.unauthorized('Access denied.')
+       return
+     }
+
     yield response.sendView('editMovie', {
       categories: categories.toJSON(),
-      movie: movie.toJSON()
+      movie: movie.toJSON(),
+      user: request.currentUser
     });
   }
 
@@ -114,6 +127,11 @@ class MovieController {
   * delete (request, response) {
     const id = request.param('id');
     const movie = yield Movie.find(id);
+
+    if (request.currentUser.id !== movie.user_id) {
+      response.unauthorized('Access denied.')
+      return
+    }
 
     yield movie.delete()
     response.redirect('/')
