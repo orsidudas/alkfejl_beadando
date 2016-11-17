@@ -63,10 +63,11 @@ class MovieController {
     const movie = yield Movie.find(request.param('id'))
     const ratings = yield movie.ratings().fetch()
     yield movie.related('category').load();
+    const userId = request.currentUser.id;
+  
     yield response.sendView('showMovie', { 
       movie: movie.toJSON(),
       ratings : ratings.toJSON(),
- //     users : users.toJSON(),
       user: request.currentUser
     })    
   }

@@ -19,27 +19,33 @@
     <p>{{ movie.content }}</p>
     <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p> 
 
+  
   <div>
-    {% for rating in ratings %} 
-      {% if (rating.user_id == currentUser.id)  %}
-        <p>mar ertekeltel</p>
-        {% else %} 
-        <label for="rating" class="col-lg-2 control-label">Értékelés</label>
+  {% set igaz = false %}
+  {% for rating in ratings %}
+    {% if (rating.user_id == currentUser.id)  %}
+        {% set igaz = true %}
+    {% endif %}
+  {% else %}
+    {% set igaz = true %}
+    <label for="rating" class="col-lg-2 control-label">Értékelés</label>
+       <select class="form-control" id="rating" name="rating">
+           <option>1</option>
+           <option>2</option>
+       </select>
+       <button type="submit" class="btn btn-primary">Értékelés</button>  
+    {% endfor %}
+ 
+{% if (igaz == false)  %}
+ <label for="rating" class="col-lg-2 control-label">Értékelés</label>
         <select class="form-control" id="rating" name="rating">
             <option>1</option>
             <option>2</option>
         </select>
         <button type="submit" class="btn btn-primary">Értékelés</button>
-      {% endif %}
-    {% else %}
-      <label for="rating" class="col-lg-2 control-label">Értékelés</label>
-        <select class="form-control" id="rating" name="rating">
-            <option>1</option>
-            <option>2</option>
-        </select>
-        <button type="submit" class="btn btn-primary">Értékelés</button>  
-    {% endfor %}
-  </div>
+{% endif %}      
+</div>
+
 
 <div class="btn-group btn-group-justified">
 {% if (movie.user_id == currentUser.id) %}
