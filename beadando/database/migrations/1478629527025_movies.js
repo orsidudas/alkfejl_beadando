@@ -12,6 +12,9 @@ class MoviesTableSchema extends Schema {
       table.text('content') //leiras
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.integer('category_id').unsigned().references('id').inTable('categories') //mufaj
+      table.integer('sum')
+      table.integer('count')
+      table.integer('rating')
       table.timestamps()
     })
   }

@@ -48,25 +48,25 @@ class MovieController {
       return
     }
 
-    const rating = yield Rating.create({ value: 0, count: 0, result: 0 })
-
     movieData.user_id = request.currentUser.id
     const movie = yield Movie.create(movieData) 
-        
-    rating.movie_id = movie.id;
+    movie.sum = 0;
+    movie.count = 0;
+    movie.rating = 0;
 
-    yield rating.save()
+    yield movie.save()
 
     response.redirect('/')
   }
   
   * show (request, response) {
     const movie = yield Movie.find(request.param('id'))
-    const rating = yield movie.rating().fetch()
+    const ratings = yield movie.ratings().fetch()
     yield movie.related('category').load();
     yield response.sendView('showMovie', { 
       movie: movie.toJSON(),
-      rating : rating.toJSON(),
+      ratings : ratings.toJSON(),
+ //     users : users.toJSON(),
       user: request.currentUser
     })    
   }
@@ -152,16 +152,23 @@ class MovieController {
   * rating (request, response){
     const id = request.param('id'); //film id-ja
     const rr = request.all()
-    const ratingNumber = rr.rating; 
+    const userId = request.currentUser.id //user idja
+    const ratingNumber = rr.rating; //hanyast ertekelt
 
-    const movie = yield Movie.find(id);
-    const movieRating = yield movie.rating().fetch()
+    const movieRating = new Rating();
 
-    movieRating.value = +movieRating.value + +ratingNumber;  //ha nem teszel pluszt, akkor stringkent egymas melle irja
-    movieRating.count = movieRating.count + 1;
-    movieRating.result = movieRating.value/movieRating.count;
+    movieRating.value = ratingNumber;
+    movieRating.user_id = userId;
+    movieRating.movie_id = id;
 
     yield movieRating.save();
+
+    const movie = yield Movie.find(request.param('id'))
+    movie.sum = +movie.sum + +ratingNumber;
+    movie.count = movie.count + 1;
+    movie.rating = movie.sum/movie.count;
+
+    yield movie.save();
 
     response.redirect('/')
 

@@ -17,24 +17,31 @@
     <p>Rendező: {{ movie.director }}</p>
     <h5> Leírás </h5>
     <p>{{ movie.content }}</p>
-    <p>Értékelés: {{ rating.result }}</p>
+    <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p> 
 
-    <label for="rating" class="col-lg-2 control-label">Értékelés</label>
-      <select class="form-control" id="rating" name="rating">
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4</option>
-          <option>5</option>
-          <option>6</option>
-          <option>7</option>
-          <option>8</option>
-          <option>9</option>
-          <option>10</option>
-      </select>
+  <div>
+    {% for rating in ratings %} 
+      {% if (rating.user_id == currentUser.id)  %}
+        <p>mar ertekeltel</p>
+        {% else %} 
+        <label for="rating" class="col-lg-2 control-label">Értékelés</label>
+        <select class="form-control" id="rating" name="rating">
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Értékelés</button>
+      {% endif %}
+    {% else %}
+      <label for="rating" class="col-lg-2 control-label">Értékelés</label>
+        <select class="form-control" id="rating" name="rating">
+            <option>1</option>
+            <option>2</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Értékelés</button>  
+    {% endfor %}
+  </div>
 
 <div class="btn-group btn-group-justified">
-<button type="submit" class="btn btn-primary">Értékelés</button>
 {% if (movie.user_id == currentUser.id) %}
 <a href="/movie/{{movie.id}}/edit" class="btn btn-default">Szerkesztés</a>
 <a href="/movie/{{movie.id}}/delete" class="btn btn-default">Törlés</a

@@ -8,10 +8,9 @@ class RatingsTableSchema extends Schema {
     this.create('ratings', (table) => {
       table.increments()
       table.timestamps()
-      table.integer('value')  //osszertek
-      table.integer('count')  //osszes ertekelo szama
-      table.integer('result') //eredmeny
+      table.integer('value')  //ertek
       table.integer('movie_id').unsigned().references('id').inTable('movies') //film
+      table.integer('user_id').unsigned().references('id').inTable('users') //felhasznalo
     })
   }
 

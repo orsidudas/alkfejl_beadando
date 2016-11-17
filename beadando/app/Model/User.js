@@ -12,6 +12,9 @@ class User extends Lucid {
     return this.hasMany('App/Model/Movie')
   }
 
+  ratings () {
+    return this.hasMany('App/Model/Rating')
+  }
 }
 
 module.exports = User

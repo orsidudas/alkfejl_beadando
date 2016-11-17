@@ -11,8 +11,8 @@ class Movie extends Lucid {
      return this.belongsTo('App/Model/User')
     }
 
-    rating(){
-        return this.hasOne('App/Model/Rating')
+    ratings(){
+        return this.hasMany('App/Model/Rating')
     }
 
 }
