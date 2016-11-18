@@ -27,20 +27,21 @@ class MovieController {
   }
 
   * store (request, response) {
-    const movieData = request.only('title','director', 'content', 'category_id') 
+    const movieData = request.only('title','director', 'content', 'category_id', 'image') 
 
     const rules = {
       title: 'required', //kotelezo
       director: 'required',
       content: 'required',
-      category_id: 'required'
+      category_id: 'required',
+      image: 'required'
     }
 
     const validation = yield Validator.validate(movieData, rules) 
 
     if (validation.fails()) {
       yield request
-         .withOnly('title','director', 'content', 'category_id')
+         .withOnly('title','director', 'content', 'category_id', 'image')
         .andWith({ errors: validation.messages() })
         .flash() 
 
@@ -90,20 +91,21 @@ class MovieController {
   }
 
     * postEdit (request, response) {
-    const movieData = request.only('title','director', 'content', 'category_id') 
+    const movieData = request.only('title','director', 'content', 'category_id', 'image') 
 
     const rules = {
       title: 'required', //kotelezo
       director: 'required',
       content: 'required',
-      category_id: 'required'
+      category_id: 'required',
+      image: 'required'
     };
 
     const validation = yield Validator.validate(movieData, rules)
 
     if (validation.fails()) {
       yield request
-        .withOnly('title','director', 'content', 'category_id')
+        .withOnly('title','director', 'content', 'category_id', 'image')
         .andWith({errors: validation.messages()})
         .flash()
 

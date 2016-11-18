@@ -15,6 +15,7 @@ class MoviesTableSchema extends Schema {
       table.integer('sum')
       table.integer('count')
       table.integer('rating')
+      table.string('image')
       table.timestamps()
     })
   }
