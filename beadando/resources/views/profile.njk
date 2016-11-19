@@ -1,25 +1,20 @@
 {% extends 'master' %}
-
-
 {% block content %}
 <form class="form-horizontal">
-
-{{ csrfField }}
-
-  <fieldset>
-    <h2> Adatok </h2>
-    <p> Felhasználónév: {{ currentUser.username }}</p>
-    <p>E-mail: {{ currentUser.email }}</p>
-    <hr style="border-bottom:1px solid #e8e8e8;">
-    <h2> Saját filmek </h2>
-     <div>
-    {% for movie in movies %} 
-      <p><a href="movie/{{ movie.id }}"> {{ movie.title | truncate(30)}} </a></p> 
-    {% else %}
-      <p> Nincsenek saját filmek </p>
-    {% endfor %}
-  </div>
-
-</fieldset>
+   {{ csrfField }}
+   <fieldset>
+      <h2> Adatok </h2>
+      <p> Felhasználónév: {{ currentUser.username }}</p>
+      <p>E-mail: {{ currentUser.email }}</p>
+      <hr style="border-bottom:1px solid #e8e8e8;">
+      <h2> Saját filmek </h2>
+      <div>
+         {% for movie in movies %} 
+         <p><a href="movie/{{ movie.id }}"> {{ movie.title | truncate(30)}} </a></p>
+         {% else %}
+         <p> Nincsenek saját filmek </p>
+         {% endfor %}
+      </div>
+   </fieldset>
 </form>
 {% endblock %}

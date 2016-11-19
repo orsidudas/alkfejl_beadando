@@ -1,54 +1,42 @@
 {% extends 'master' %}
-
 {% block content %}
 <form class="form-horizontal" method="post">
-
-{{ csrfField }}
-
-
-  <fieldset>
-  <div class="post">
-    <h2>{{ movie.title }}</h2>
-
-    <img src="{{movie.image}}" class="img-responsive" width="200">
-    <p> Műfaj: {{ movie.category.name }}</p>
-    <p>Rendező: {{ movie.director }}</p>
-    <h5> Leírás </h5>
-    <p>{{ movie.content }}</p>
-    <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p> 
-
-
-  {% set igaz = false %}
-  {% for rating in ratings %}
-    {% if (rating.user_id == currentUser.id)  %} <!--a jelenlegi felhasznalo mar szavazott-->
-        {% set igaz = true %}
-    {% endif %}
-  {% endfor %}
-
-<div class="input-group">
-    {% if (igaz == false)  %}
-            <select class="form-control" id="rating" name="rating">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-            <span class="input-group-btn">
-             <button class="btn btn-default" type="submit">Értékelem!</button>
-             </span>
-    {% endif %}      
-</div>
-
-
-<div class="btn-group btn-group-justified">
-{% if (movie.user_id == currentUser.id) %}
-<a href="/movie/{{movie.id}}/edit" class="btn btn-default">Szerkesztés</a>
-<a href="/movie/{{movie.id}}/delete" class="btn btn-default">Törlés</a
-{% endif %}
-</div>
-
-
+   {{ csrfField }}
+   <fieldset>
+      <div class="post">
+      <h2>{{ movie.title }}</h2>
+      <img src="{{movie.image}}" class="img-responsive" width="200">
+      <p> Műfaj: {{ movie.category.name }}</p>
+      <p>Rendező: {{ movie.director }}</p>
+      <h5> Leírás </h5>
+      <p>{{ movie.content }}</p>
+      <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p>
+      {% set igaz = false %}
+      {% for rating in ratings %}
+      {% if (rating.user_id == currentUser.id)  %} <!--a jelenlegi felhasznalo mar szavazott-->
+      {% set igaz = true %}
+      {% endif %}
+      {% endfor %}
+      <div class="input-group">
+         {% if (igaz == false)  %}
+         <select class="form-control" id="rating" name="rating">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+         </select>
+         <span class="input-group-btn">
+         <button class="btn btn-default" type="submit">Értékelem!</button>
+         </span>
+         {% endif %}      
+      </div>
+      <div class="btn-group btn-group-justified">
+         {% if (movie.user_id == currentUser.id) %}
+         <a href="/movie/{{movie.id}}/edit" class="btn btn-default">Szerkesztés</a>
+         <a href="/movie/{{movie.id}}/delete" class="btn btn-default">Törlés</a
+         {% endif %}
+      </div>
    </fieldset>
 </form>
 {% endblock %}

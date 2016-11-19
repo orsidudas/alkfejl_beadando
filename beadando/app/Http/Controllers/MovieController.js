@@ -8,26 +8,26 @@ const Database = use('Database')
 
 class MovieController {
 
-  * index (request, response) {
+  * index(request, response) {
     const categories = yield Category.all()
     const id = request.param('id');
     const movies = yield Movie.query().orderBy('id', 'desc').fetch() //utoljara hozzaadott a legtetejen
-    
+
     yield response.sendView('home', {
       categories: categories.toJSON(),
       movies: movies.toJSON()
     });
   }
-  
-  * create (request, response) {
+
+  * create(request, response) {
     const categories = yield Category.all()
     yield response.sendView('createMovie', {
       categories: categories.toJSON()
     });
   }
 
-  * store (request, response) {
-    const movieData = request.only('title','director', 'content', 'category_id', 'image') 
+  * store(request, response) {
+    const movieData = request.only('title', 'director', 'content', 'category_id', 'image')
 
     const rules = {
       title: 'required', //kotelezo
@@ -37,20 +37,20 @@ class MovieController {
       image: 'required'
     }
 
-    const validation = yield Validator.validate(movieData, rules) 
+    const validation = yield Validator.validate(movieData, rules)
 
     if (validation.fails()) {
       yield request
-         .withOnly('title','director', 'content', 'category_id', 'image')
+        .withOnly('title', 'director', 'content', 'category_id', 'image')
         .andWith({ errors: validation.messages() })
-        .flash() 
+        .flash()
 
       response.redirect('back')
       return
     }
 
     movieData.user_id = request.currentUser.id
-    const movie = yield Movie.create(movieData) 
+    const movie = yield Movie.create(movieData)
     movie.sum = 0;
     movie.count = 0;
     movie.rating = 0;
@@ -59,31 +59,31 @@ class MovieController {
 
     response.redirect('/')
   }
-  
-  * show (request, response) {
+
+  * show(request, response) {
     const categories = yield Category.all()
     const movie = yield Movie.find(request.param('id'))
     const ratings = yield movie.ratings().fetch()
     yield movie.related('category').load();
     const userId = request.currentUser.id;
-  
-    yield response.sendView('showMovie', { 
+
+    yield response.sendView('showMovie', {
       movie: movie.toJSON(),
-      ratings : ratings.toJSON(),
+      ratings: ratings.toJSON(),
       user: request.currentUser,
       categories: categories.toJSON()
-    })    
+    })
   }
 
-  * edit (request, response) {
+  * edit(request, response) {
     const categories = yield Category.all()
     const id = request.param('id');
     const movie = yield Movie.find(id);
 
     if (request.currentUser.id !== movie.user_id) {
-       response.unauthorized('Access denied.')
-       return
-     }
+      response.unauthorized('Access denied.')
+      return
+    }
 
     yield response.sendView('editMovie', {
       categories: categories.toJSON(),
@@ -92,8 +92,8 @@ class MovieController {
     });
   }
 
-    * postEdit (request, response) {
-    const movieData = request.only('title','director', 'content', 'category_id', 'image') 
+  * postEdit(request, response) {
+    const movieData = request.only('title', 'director', 'content', 'category_id', 'image')
 
     const rules = {
       title: 'required', //kotelezo
@@ -107,8 +107,8 @@ class MovieController {
 
     if (validation.fails()) {
       yield request
-        .withOnly('title','director', 'content', 'category_id', 'image')
-        .andWith({errors: validation.messages()})
+        .withOnly('title', 'director', 'content', 'category_id', 'image')
+        .andWith({ errors: validation.messages() })
         .flash()
 
       response.redirect('back')
@@ -118,19 +118,19 @@ class MovieController {
     const id = request.param('id');
     const movie = yield Movie.find(id);
 
-    
+
     movie.title = movieData.title;
-    movie.director = movieData.director; 
+    movie.director = movieData.director;
     movie.content = movieData.content;
     movie.category_id = movieData.category_id;
     movie.image = movieData.image;
 
     yield movie.save()
-    
+
     response.redirect('/')
   }
 
-  * delete (request, response) {
+  * delete(request, response) {
     const id = request.param('id');
     const movie = yield Movie.find(id);
 
@@ -143,12 +143,12 @@ class MovieController {
     response.redirect('/')
   }
 
-  * category (request, response) {
+  * category(request, response) {
     const categories = yield Category.all()
     const id = request.param('id');
-    const category = yield Category.find(id);    
+    const category = yield Category.find(id);
     const movies = yield category.movies().fetch();
-    
+
     yield response.sendView('showCategory', {
       category: category.toJSON(),
       movies: movies.toJSON(),
@@ -157,7 +157,7 @@ class MovieController {
   }
 
 
-  * rating (request, response){
+  * rating(request, response) {
     const id = request.param('id'); //film id-ja
     const rr = request.all()
     const userId = request.currentUser.id //user idja
@@ -174,7 +174,7 @@ class MovieController {
     const movie = yield Movie.find(request.param('id'))
     movie.sum = +movie.sum + +ratingNumber;
     movie.count = movie.count + 1;
-    movie.rating = movie.sum/movie.count;
+    movie.rating = movie.sum / movie.count;
 
     yield movie.save();
 
