@@ -123,6 +123,7 @@ class MovieController {
     movie.director = movieData.director; 
     movie.content = movieData.content;
     movie.category_id = movieData.category_id;
+    movie.image = movieData.image;
 
     yield movie.save()
     

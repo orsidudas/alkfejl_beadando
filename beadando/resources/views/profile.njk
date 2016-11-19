@@ -6,23 +6,22 @@
 
 {{ csrfField }}
 
-
   <fieldset>
+    <h2> Adatok </h2>
     <p> Felhasználónév: {{ currentUser.username }}</p>
     <p>E-mail: {{ currentUser.email }}</p>
     <hr>
-    <h5> Saját filmek </h5>
+    <h2> Saját filmek </h2>
      <div class="movies-wrapper">
     {% for movie in movies %} 
       <div class="movies">
         <h2><a href="movie/{{ movie.id }}"> {{ movie.title }} </a></h2> 
        </div>
     {% else %}
-      <h2> No movies found </h2>
+      <p> Nincsenek saját filmek </p>
     {% endfor %}
   </div>
 
-
-   </fieldset>
+</fieldset>
 </form>
 {% endblock %}
