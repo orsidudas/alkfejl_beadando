@@ -14,7 +14,7 @@
     <div class="thumbnail">
       <img class="responsive-img img-thumbnail" style="width:250px;height:250px;" src="{{movie.image}}" >
       <div class="caption">
-        <h3> {{ movie.title }}</h3> 
+        <h3> {{ movie.title | truncate(23) }}</h3> 
         {% if currentUser %}  
         <p><a href="movie/{{ movie.id }}" class="btn btn-default" role="button">Részletek</a></p>
         {% endif %}
