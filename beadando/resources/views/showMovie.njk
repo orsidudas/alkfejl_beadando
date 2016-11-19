@@ -18,8 +18,7 @@
     <p>{{ movie.content }}</p>
     <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p> 
 
-  
-  <div>
+
   {% set igaz = false %}
   {% for rating in ratings %}
     {% if (rating.user_id == currentUser.id)  %} <!--a jelenlegi felhasznalo mar szavazott-->
@@ -27,6 +26,7 @@
     {% endif %}
   {% endfor %}
 
+<div class="input-group">
     {% if (igaz == false)  %}
             <select class="form-control" id="rating" name="rating">
                 <option>1</option>
@@ -35,9 +35,12 @@
                 <option>4</option>
                 <option>5</option>
             </select>
-            <button type="submit" class="btn btn-primary btn-group-justified">Értékelem</button>
+            <span class="input-group-btn">
+             <button class="btn btn-default" type="submit">Értékelem!</button>
+             </span>
     {% endif %}      
-   </div>
+</div>
+
 
 <div class="btn-group btn-group-justified">
 {% if (movie.user_id == currentUser.id) %}
