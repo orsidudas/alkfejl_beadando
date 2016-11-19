@@ -33,7 +33,7 @@
     </fieldset>
 
     <fieldset class="form-group">
-    <label for="category_id" class="col-lg-2 control-label">Kategória</label>
+    {{ form.label('Kategória') }}
       <select class="form-control" id="category_id" name="category_id">
         {% for category in categories %}
         <option value="{{ category.id }}"

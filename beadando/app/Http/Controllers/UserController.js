@@ -4,15 +4,19 @@ const User = use('App/Model/User')
 const Validator = use('Validator')
 const Database = use('Database')
 const Hash = use('Hash')
+const Category = use('App/Model/Category')
 
 class UserController {
     * registration(request, response) {
+    const categories = yield Category.all()
     const isLoggedIn = yield request.auth.check()
     if (isLoggedIn) {
       response.redirect('/')
     }
 
-    yield response.sendView('registration')
+    yield response.sendView('registration', {
+      categories: categories.toJSON(),
+    });
   }
 
   *postRegistration(request, response){
@@ -50,12 +54,15 @@ class UserController {
   }
 
   * login(request, response) {
+    const categories = yield Category.all()
     const isLoggedIn = yield request.auth.check()
     if (isLoggedIn) {
       response.redirect('/')
     }
 
-    yield response.sendView('login')
+    yield response.sendView('login',{
+      categories: categories.toJSON()
+    });
   }
 
   * postLogin (request, response) {
@@ -92,13 +99,15 @@ class UserController {
 
 
     * profile(request, response) {
+      const categories = yield Category.all()
       const userId = request.currentUser.id
       const user = yield User.find(userId)
       const movies = yield user.movies().fetch();
     
       yield response.sendView('profile', {
         movies: movies.toJSON(),
-        user: request.currentUse
+        user: request.currentUse,
+        categories: categories.toJSON()
       });
     }
 

@@ -61,6 +61,7 @@ class MovieController {
   }
   
   * show (request, response) {
+    const categories = yield Category.all()
     const movie = yield Movie.find(request.param('id'))
     const ratings = yield movie.ratings().fetch()
     yield movie.related('category').load();
@@ -69,7 +70,8 @@ class MovieController {
     yield response.sendView('showMovie', { 
       movie: movie.toJSON(),
       ratings : ratings.toJSON(),
-      user: request.currentUser
+      user: request.currentUser,
+      categories: categories.toJSON()
     })    
   }
 
@@ -141,13 +143,15 @@ class MovieController {
   }
 
   * category (request, response) {
+    const categories = yield Category.all()
     const id = request.param('id');
     const category = yield Category.find(id);    
     const movies = yield category.movies().fetch();
     
     yield response.sendView('showCategory', {
       category: category.toJSON(),
-      movies: movies.toJSON()
+      movies: movies.toJSON(),
+      categories: categories.toJSON()
     });
   }
 

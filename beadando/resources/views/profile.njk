@@ -8,10 +8,6 @@
 
 
   <fieldset>
-    <div>
-      <a href="/">  Vissza a főoldalra </a>
-    </div>
-    <hr>
     <p> Felhasználónév: {{ currentUser.username }}</p>
     <p>E-mail: {{ currentUser.email }}</p>
     <hr>
@@ -20,8 +16,7 @@
     {% for movie in movies %} 
       <div class="movies">
         <h2><a href="movie/{{ movie.id }}"> {{ movie.title }} </a></h2> 
-        <p> {{ movie.content | truncate(150)}} </p> <!--we use the truncate filter on the post content by limit the characters count to 150.-->
-      </div>
+       </div>
     {% else %}
       <h2> No movies found </h2>
     {% endfor %}

@@ -8,13 +8,10 @@
 
   <fieldset>
   <div class="post">
-    <div>
-      <a href="/">  Go Back </a>
-    </div>
     <hr>
     <h2>{{ movie.title }}</h2>
 
-    <img src="{{movie.image}}" width="200">
+    <img src="{{movie.image}}" class="img-responsive" width="200">
     <p> Műfaj: {{ movie.category.name }}</p>
     <p>Rendező: {{ movie.director }}</p>
     <h5> Leírás </h5>
@@ -30,24 +27,27 @@
     {% endif %}
   {% else %}
     {% set igaz = true %}
-    <label for="rating" class="col-lg-2 control-label">Értékelés</label>
        <select class="form-control" id="rating" name="rating">
            <option>1</option>
            <option>2</option>
+           <option>3</option>
+           <option>4</option>
+           <option>5</option>
        </select>
-       <button type="submit" class="btn btn-primary">Értékelés</button>  
+       <button type="submit" class="btn btn-primary btn-group-justified">Értékelelem</button>  
     {% endfor %}
  
 {% if (igaz == false)  %}
- <label for="rating" class="col-lg-2 control-label">Értékelés</label>
         <select class="form-control" id="rating" name="rating">
             <option>1</option>
             <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
         </select>
-        <button type="submit" class="btn btn-primary">Értékelés</button>
+        <button type="submit" class="btn btn-primary btn-group-justified">Értékelem</button>
 {% endif %}      
 </div>
-
 
 <div class="btn-group btn-group-justified">
 {% if (movie.user_id == currentUser.id) %}
