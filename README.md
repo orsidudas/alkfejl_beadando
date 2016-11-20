@@ -99,17 +99,18 @@ Készítette: Dudás Orsolya (PJ1L4K)
 + **GET/**: főoldal
 + **GET/login**: bejelentkező oldal
 + **POST/login**: bejelentkező adatok felküldése
-+ **GET/login/signup**: regisztrációs oldal
-+ **POST/login/signup**: regisztrációs adatok felküldése
 + **GET/logout**: kijelentkező oldal
-+ **GET/movies/list**: filmlista oldal
-+ **GET/movies/new**: új film felvétele
-+ **POST/movies/new**: új film felvételéhez szükséges adatok felküldése
-+ **GET/movies/id**: kiválasztott film megtekintése
-+ **POST/movies/id**: film értékelésének felvitele
-+ **GET/movies/delete=id**: kiválasztott film törlése
-+ **GET/movies/edit=id**: film módosítása
-+ **POST/movies/edit=id**: film módosítása, adatok felküldése
++ **GET/registration**: regisztrációs oldal
++ **POST/registrationp**: regisztrációs adatok felküldése
++ **GET/movie/create**: új film felvétele
++ **POST/movie/create**: új film felvételéhez szükséges adatok felküldése
++ **GET/movie/:id**: kiválasztott film megtekintése
++ **GET/movie/:id/edit**: film módosítása
++ **POST/movie/:id/edit**: film módosított adatainak felküldése
++ **GET/movie/:id/delete**: kiválasztott film törlése
++ **POST/movie/:id**: film értékelésének felvitele
++ **GET/:id/category**: kiválasztott kategória megtekintése
++ **GET/profile**: adatlap megtekintése
 
 ###Felhasználóifelület-modell
 
@@ -127,13 +128,9 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 ![database](images/film2.jpg)
 
-###Osztálymodell
-
-**Adatmodell**
-
 ![database](images/adatk.png)
 
-###Designtervek (végső megvalósítás kinézete)
+**Designtervek (végső megvalósítás kinézete)**
 
 **Főoldal**
 
@@ -143,13 +140,13 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 ![database](images/reg.png)
 
-**Bejelentkezési oldal**
-
-![database](images/login.png)
-
 **Kiválasztott film oldala**
 
 ![database](images/movie.png)
+
+###Osztálymodell
+
+**Adatmodell**
 
 ##Források
 
