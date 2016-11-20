@@ -152,6 +152,7 @@ Kiválasztott film oldala
 ![database](images/ujAdatmodell.png)
 
 **Adatbázisterv**
+
 ![database](images/ujAdatbazisTerv.png)
 
 **Állapotdiagram**
@@ -159,6 +160,18 @@ Kiválasztott film oldala
 ##Implementáció
 
 ###Fejlesztői környezet bemutatása
+
+**Lokális környezet**
+
++Github account szükséges
++Github kódtár létrehozása és klónozása (git clone https://...)
++Külön mappa létrehozása a beadandó feladatnak
++VSCode beállítása
++Ezután elkezdhetjük a kód írását
++VSCode-on belül mentjük a változásokat
++VSCode segítségével egy vagy több fájlt kiválaszthatjuk és feltölthetjük a lokális tárolóból a Github-ra, illetve a terminál segítségével a git add, git commit, git push parancsokkal is elvégezhetjük ezeket a műveleteket. 
++ A Github oldalán leellenőrizhetjük a munkánkat.
+
 ###Könyvtárstruktúrában lévő mappák funkciójának bemutatása
 
 ##Tesztelés
