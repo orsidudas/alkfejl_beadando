@@ -116,37 +116,55 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 **Oldalvázlatok**
 
-**Főoldal**
+Főoldal
 
 ![database](images/Főoldal2.jpg)
 
-**Regisztrációs oldal**
+Regisztrációs oldal
 
 ![database](images/reg_page.jpg)
 
-**Kiválasztott film oldala**
+Kiválasztott film oldala
 
 ![database](images/film2.jpg)
 
-![database](images/adatk.png)
-
 **Designtervek (végső megvalósítás kinézete)**
 
-**Főoldal**
+Főoldal
 
 ![database](images/home.png)
 
-**Regisztrációs oldal**
+Regisztrációs oldal
 
 ![database](images/reg.png)
 
-**Kiválasztott film oldala**
+Kiválasztott film oldala
 
 ![database](images/movie.png)
 
 ###Osztálymodell
 
 **Adatmodell**
+
+![database](images/adatk.png)
+
+**Adatbázisterv**
+**Állapotdiagram**
+
+##Implementáció
+
+###Fejlesztői környezet bemutatása
+###Könyvtárstruktúrában lévő mappák funkciójának bemutatása
+
+##Tesztelés
+
+###Tesztesetek felsorolása: milyen eseteket próbált végig a hallgató. (egyelőre nem kell)
+
+##Felhasználói dokumentáció
+
+###A futtatáshoz ajánlott hardver-, szoftver konfiguráció
+###Telepítés lépései: hogyan kerül a Githubról a célgépre a program, hogyan kell elindítani
+###A program használata
 
 ##Források
 
