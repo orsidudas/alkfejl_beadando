@@ -19,7 +19,7 @@
       </div>
       <p><b> Leírás </b></p>
       <p>{{ movie.content }}</p>
-      <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p>
+      <p><b>Értékelés:</b> {{ movie.rating }} ({{ movie.count }} szavazatból) </p>
       {% set igaz = false %}
       {% for rating in ratings %}
       {% if (rating.user_id == currentUser.id)  %} <!--a jelenlegi felhasznalo mar szavazott-->

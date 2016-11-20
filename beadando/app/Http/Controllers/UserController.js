@@ -50,7 +50,7 @@ class UserController {
 
     // yield request.auth.login(user)
 
-    response.redirect('/')
+    response.redirect('/login')
   }
 
   * login(request, response) {

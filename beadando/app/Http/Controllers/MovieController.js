@@ -30,7 +30,7 @@ class MovieController {
     const movieData = request.only('title', 'director', 'content', 'category_id', 'image')
 
     const rules = {
-      title: 'required|alpha_numeric|unique:movies', //kotelezo
+      title: 'required|unique:movies', //kotelezo
       director: 'required',
       content: 'required',
       category_id: 'required',
@@ -127,7 +127,8 @@ class MovieController {
 
     yield movie.save()
 
-    response.redirect('/')
+    response.redirect('/movie/' + id )
+
   }
 
   * delete(request, response) {
@@ -178,7 +179,7 @@ class MovieController {
 
     yield movie.save();
 
-    response.redirect('/')
+    response.redirect('/movie/' + id )
 
   }
 

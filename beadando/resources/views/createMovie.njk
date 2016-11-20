@@ -48,7 +48,11 @@
       <div class="col-lg-10">
          <select class="form-control input-lg" id="category_id" name="category_id">
          {% for category in categories %}
-         <option>{{ category.name }}</option>
+         <option value="{{ category.id }}"
+         {% if category.id == old('category_id') %}
+         selected
+         {% endif %}
+         >{{ category.name }}</option>
          {% endfor %}
          </select>
       </div>
