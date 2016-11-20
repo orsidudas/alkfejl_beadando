@@ -133,6 +133,23 @@ Készítette: Dudás Orsolya (PJ1L4K)
 
 ![database](images/adatk.png)
 
+###Designtervek (végső megvalósítás kinézete)
+
+**Főoldal**
+
+![database](images/home.png)
+
+**Regisztrációs oldal**
+
+![database](images/reg.png)
+
+**Bejelentkezési oldal**
+
+![database](images/login.png)
+
+**Kiválasztott film oldala**
+
+![database](images/movie.png)
 
 ##Források
 
