@@ -83,58 +83,6 @@
             "readonly": false
         }
     },
-    "sqlite_sequence": {
-        "slug": "sqlite_sequence",
-        "table": {
-            "name": "sqlite_sequence",
-            "pk": "",
-            "verbose": "sqlite_sequence"
-        },
-        "columns": [
-            {
-                "name": "name",
-                "verbose": "name",
-                "control": {
-                    "text": true
-                },
-                "type": "",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "seq",
-                "verbose": "seq",
-                "control": {
-                    "text": true
-                },
-                "type": "",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            }
-        ],
-        "mainview": {
-            "show": true
-        },
-        "listview": {
-            "order": {},
-            "page": 25
-        },
-        "editview": {
-            "readonly": false
-        }
-    },
     "users": {
         "slug": "users",
         "table": {
@@ -513,8 +461,8 @@
                 "control": {
                     "text": true
                 },
-                "type": "varchar(255)",
-                "allowNull": true,
+                "type": "varchar(80)",
+                "allowNull": false,
                 "defaultValue": null,
                 "listview": {
                     "show": true
@@ -529,7 +477,7 @@
                 "control": {
                     "text": true
                 },
-                "type": "varchar(255)",
+                "type": "varchar(80)",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -636,6 +584,22 @@
                 }
             },
             {
+                "name": "image",
+                "verbose": "image",
+                "control": {
+                    "text": true
+                },
+                "type": "varchar(250)",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
                 "name": "created_at",
                 "verbose": "created_at",
                 "control": {
@@ -658,22 +622,6 @@
                     "text": true
                 },
                 "type": "datetime",
-                "allowNull": true,
-                "defaultValue": null,
-                "listview": {
-                    "show": true
-                },
-                "editview": {
-                    "show": true
-                }
-            },
-            {
-                "name": "image",
-                "verbose": "image",
-                "control": {
-                    "text": true
-                },
-                "type": "varchar(255)",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {
@@ -790,6 +738,58 @@
                     "text": true
                 },
                 "type": "integer",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            }
+        ],
+        "mainview": {
+            "show": true
+        },
+        "listview": {
+            "order": {},
+            "page": 25
+        },
+        "editview": {
+            "readonly": false
+        }
+    },
+    "sqlite_sequence": {
+        "slug": "sqlite_sequence",
+        "table": {
+            "name": "sqlite_sequence",
+            "pk": "",
+            "verbose": "sqlite_sequence"
+        },
+        "columns": [
+            {
+                "name": "name",
+                "verbose": "name",
+                "control": {
+                    "text": true
+                },
+                "type": "",
+                "allowNull": true,
+                "defaultValue": null,
+                "listview": {
+                    "show": true
+                },
+                "editview": {
+                    "show": true
+                }
+            },
+            {
+                "name": "seq",
+                "verbose": "seq",
+                "control": {
+                    "text": true
+                },
+                "type": "",
                 "allowNull": true,
                 "defaultValue": null,
                 "listview": {

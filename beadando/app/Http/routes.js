@@ -4,7 +4,7 @@ const Route = use('Route')
 
 Route.get('/', 'MovieController.index')
 Route.get('/movie/create', 'MovieController.create').middleware('auth')
-Route.post('/movie', 'MovieController.store').middleware('auth')
+Route.post('/movie/create', 'MovieController.store').middleware('auth')
 Route.get('/movie/:id', 'MovieController.show').middleware('auth')
 Route.get('/movie/:id/edit', 'MovieController.edit').middleware('auth')
 Route.post('/movie/:id/edit', 'MovieController.postEdit').middleware('auth')

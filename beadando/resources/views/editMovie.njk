@@ -20,31 +20,31 @@
    <div class="form-group">
       <label for="name" class="col-lg-2 control-label">Cím</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control" id="title" name="title" placeholder="Cím" value="{{ movie.title }}">
+         <input type="text" class="form-control input-lg" id="title" name="title" placeholder="Cím" value="{{ movie.title }}">
       </div>
    </div>
    <div class="form-group">
       <label for="name" class="col-lg-2 control-label">Rendező</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control" id="director" name="director" placeholder="Rendező" value="{{ movie.director }}">
+         <input type="text" class="form-control input-lg" id="director" name="director" placeholder="Rendező" value="{{ movie.director }}">
       </div>
    </div>
    <div class="form-group">
       <label for="name" class="col-lg-2 control-label">Kép link</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control" id="image" name="image" placeholder="Kép" value="{{ movie.image }}">
+         <input type="text" class="form-control input-lg" id="image" name="image" placeholder="Kép" value="{{ movie.image }}">
       </div>
    </div>
    <div class="form-group">
       <label for="name" class="col-lg-2 control-label">Leírás</label>
       <div class="col-lg-10">
-         <input type="textarea" class="form-control" id="content" name="content" placeholder="Leírás" value="{{ movie.content }}">
+         <input type="textarea" class="form-control input-lg" id="content" name="content" placeholder="Leírás" value="{{ movie.content }}">
       </div>
    </div>
    <div class="form-group">
       <label for="category_id" class="col-lg-2 control-label">Kategória</label>
       <div class="col-lg-10">
-         <select class="form-control" id="category_id" name="category_id">
+         <select class="form-control input-lg" id="category_id" name="category_id">
          {% for category in categories %}
          <option value="{{ category.id }}"
          {% if category.id == movie.category_id %}
@@ -55,9 +55,9 @@
          </select>
       </div>
    </div>
-   {{ form.submit('Mentés', 'publish', { class: 'btn btn-default btn-block' }) }}
+    <button class="btn btn-default btn-block btn-lg" type="submit">Mentés</button>
    <div>
-      <a href="/movie/{{movie.id}}" class="btn btn-default btn-block"> Mégse </a>
+      <a href="/movie/{{movie.id}}" class="btn btn-default btn-block btn-lg"> Mégse </a>
       <hr>
    </div>
    </div>

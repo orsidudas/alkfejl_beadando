@@ -30,7 +30,7 @@ class MovieController {
     const movieData = request.only('title', 'director', 'content', 'category_id', 'image')
 
     const rules = {
-      title: 'required', //kotelezo
+      title: 'required|alpha_numeric|unique:movies', //kotelezo
       director: 'required',
       content: 'required',
       category_id: 'required',
