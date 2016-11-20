@@ -163,28 +163,52 @@ Kiválasztott film oldala
 
 **Lokális környezet**
 
-+Github account szükséges
-+Github kódtár létrehozása és klónozása (git clone https://...)
-+Külön mappa létrehozása a beadandó feladatnak
-+VSCode beállítása
-+Ezután elkezdhetjük a kód írását
-+VSCode-on belül mentjük a változásokat
-+VSCode segítségével egy vagy több fájlt kiválaszthatjuk és feltölthetjük a lokális tárolóból a Github-ra, illetve a terminál segítségével a git add, git commit, git push parancsokkal is elvégezhetjük ezeket a műveleteket. 
++ Github account szükséges
++ Github kódtár létrehozása és klónozása (git clone https://...)
++ Külön mappa létrehozása a beadandó feladatnak
++ VSCode beállítása
++ Ezután elkezdhetjük a kód írását
++ VSCode-on belül mentjük a változásokat
++ VSCode segítségével egy vagy több fájlt kiválaszthatjuk és feltölthetjük a lokális tárolóból a Github-ra, illetve a terminál segítségével a git add, git commit, git push parancsokkal is elvégezhetjük ezeket a műveleteket. 
 + A Github oldalán leellenőrizhetjük a munkánkat.
 
 ###Könyvtárstruktúrában lévő mappák funkciójának bemutatása
 
-##Tesztelés
++ beadando
+  + app
+    + Http
+      + Controllers
+        + MovieController.js
+        + UserController.js
+      + routes.js
+    + Model
+      + Category.js
+      + Movie.js
+      + Rating.js
+      + User.js
+  + database
+    + migrations
+      + 1478629334889_create_users_table.js
+      + 1478629411527_categories.js
+      + 1478629527025_movies.js
+      + 1479204208962_ratings.js
+    + development.sqlite
+    + factory.js
+  + resources/views
+    + createMovie.njk
+    + editMovie.njk
+    + home.njk
+    + login.njk
+    + master.njk
+    + profile.njk
+    + registration.njk
+    + showCategory.njk
+    + showMovie.njk
+    + welcome.njk
++ package.json
++ server.js
 
-###Tesztesetek felsorolása: milyen eseteket próbált végig a hallgató. (egyelőre nem kell)
-
-##Felhasználói dokumentáció
-
-###A futtatáshoz ajánlott hardver-, szoftver konfiguráció
-###Telepítés lépései: hogyan kerül a Githubról a célgépre a program, hogyan kell elindítani
-###A program használata
-
-##Források
+###Források
 
 + https://github.com/horvathgyozo/alkfejl_minta
 + http://webprogramozas.inf.elte.hu/alkfejl.php
