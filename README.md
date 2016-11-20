@@ -182,24 +182,34 @@ Kiválasztott film oldala
 + beadando
   + app
     + Http
-      + Controllers
+      + Controllers: Összekapcsolják a modelleket a nézetekkel.
         + MovieController.js
         + UserController.js
       + routes.js
-    + Model
+    + Model: Az adatbázis kapcsolatokat írja le.
       + Category.js
       + Movie.js
       + Rating.js
       + User.js
+  + config: A beállításokat tartalmazza.
+    + express-admin
+      + config.json
+      + custom.json
+      + settings.json
+      + users.json
+    + app.js
+    + auth.js
+    + database.js
+    + session.js
   + database
-    + migrations
+    + migrations: Az adatbázis táblák sémáját szerkeszthetjük velük.
       + 1478629334889_create_users_table.js
       + 1478629411527_categories.js
       + 1478629527025_movies.js
       + 1479204208962_ratings.js
     + development.sqlite
     + factory.js
-  + resources/views
+  + resources/views: A nézetek leíró fájlokat tartalmazza.
     + createMovie.njk
     + editMovie.njk
     + home.njk
@@ -210,6 +220,7 @@ Kiválasztott film oldala
     + showCategory.njk
     + showMovie.njk
     + welcome.njk
+  + .env
   + package.json
   + server.js
 
