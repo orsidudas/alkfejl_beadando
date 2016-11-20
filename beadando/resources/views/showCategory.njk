@@ -13,15 +13,12 @@
             {% if currentUser %}  
             <p><a href="/movie/{{ movie.id }}" class="btn btn-default btn-lg" role="button">Részletek</a></p>
             {% endif %}
-         </div>
-         <!--div class thumbnail-->
-      </div>
-      <!--div class col-->
+         </div> <!--div class caption-->
+         </div> <!--div class thumbnail-->
+      </div> <!--div class col-->
       {% else %}
       <h3>Ebben a kategóriában jelenleg nincs még film felvéve </h3>
       {% endfor %}
-   </div>
-   <!--div class row-->    
-</div>
-<!--div class post-->
+   </div> <!--div class row-->    
+</div> <!--div class post-->
 {% endblock %}

@@ -141,6 +141,12 @@ class MovieController {
     }
 
     yield movie.delete()
+    
+      yield Database
+    .table('ratings')
+    .where('movie_id', id)
+    .delete()
+
     response.redirect('/')
   }
 
