@@ -149,9 +149,11 @@ Kiválasztott film oldala
 
 **Adatmodell**
 
-![database](images/adatk.png)
+![database](images/ujAdatmodell.png)
 
 **Adatbázisterv**
+![database](images/ujAdatbazisTerv.png)
+
 **Állapotdiagram**
 
 ##Implementáció
