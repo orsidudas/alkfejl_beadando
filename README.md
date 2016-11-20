@@ -157,6 +157,11 @@ Kiválasztott film oldala
 
 **Állapotdiagram**
 
+Értékelés
+
+![database](images/nomnoml.png)
+
+
 ##Implementáció
 
 ###Fejlesztői környezet bemutatása
