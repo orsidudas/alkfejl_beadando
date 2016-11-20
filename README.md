@@ -205,8 +205,8 @@ Kiválasztott film oldala
     + showCategory.njk
     + showMovie.njk
     + welcome.njk
-+ package.json
-+ server.js
+  + package.json
+  + server.js
 
 ###Források
 
