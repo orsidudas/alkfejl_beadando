@@ -4,11 +4,20 @@
    {{ csrfField }}
    <fieldset>
       <div class="post">
+      <div class="row">
+      <div class="col-xs-12 col-md-8">
       <h2>{{ movie.title }}</h2>
-      <img src="{{movie.image}}" class="img-responsive" width="200">
-      <p> Műfaj: {{ movie.category.name }}</p>
-      <p>Rendező: {{ movie.director }}</p>
-      <h5> Leírás </h5>
+      <hr style="border-bottom:1px solid #e8e8e8;">
+      <p><b> Műfaj:</b> {{ movie.category.name }}</p>
+      <hr style="border-bottom:1px solid #e8e8e8;">
+      <p><b>Rendező:</b> {{ movie.director }}</p>
+      <hr style="border-bottom:1px solid #e8e8e8;">
+      </div>
+      <div class="col-xs-6 col-md-4">
+      <img src="{{movie.image}}" class="img-responsive img-thumbnail" >      
+      </div>
+      </div>
+      <p><b> Leírás </b></p>
       <p>{{ movie.content }}</p>
       <p>Értékelés: {{ movie.rating }} ({{ movie.count }} szavazatból) </p>
       {% set igaz = false %}
@@ -17,7 +26,7 @@
       {% set igaz = true %}
       {% endif %}
       {% endfor %}
-      <div class="input-group">
+      <div class="input-group input-group-lg">
          {% if (igaz == false)  %}
          <select class="form-control" id="rating" name="rating">
             <option>1</option>
@@ -26,11 +35,12 @@
             <option>4</option>
             <option>5</option>
          </select>
-         <span class="input-group-btn">
+         <span class="input-group-btn input-group-lg">
          <button class="btn btn-default" type="submit">Értékelem!</button>
          </span>
          {% endif %}      
       </div>
+      <p>
       <div class="btn-group btn-group-justified">
          {% if (movie.user_id == currentUser.id) %}
          <a href="/movie/{{movie.id}}/edit" class="btn btn-default">Szerkesztés</a>
