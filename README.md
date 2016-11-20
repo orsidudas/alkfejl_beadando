@@ -24,7 +24,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 ###Szakterületi fogalomjegyzék
 
 + **film:** olyan objektum, melynek, címe, rendezője, leírása, műfaja, illetve értékelése lehet
-+ **értékelés:** a felhasználó által adott 1-től 10-ig terjedő egész szám
++ **értékelés:** a felhasználó által adott 1-től 5-ig terjedő egész szám
 + **lista:** filmek gyűjteménye
 + **módosítás:** film adott tulajdonságainak megváltoztatása
 + **törlés:** film eltávolítása a listából
@@ -50,18 +50,20 @@ Készítette: Dudás Orsolya (PJ1L4K)
   + Főoldal
   + Bejelentkezés
   + Regisztráció
+  + Kategóriák
 
 + **Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
   + Új film felvétele
   + Listában szereplő film megtekintése
-  + Listában szereplő film szerkesztése
-  + Listában szereplő film törlése
+  + Felhasználó által felvett film szerkesztése
+  + Felhasználó által felvett film törlése
   + Film értékelése
+  + Profil megtekintése
   + Kijelentkezés
   
 **Használati eset diagramok**
 
-![database](images/haszn_diagr_1.png)
+![database](images/ujHasznalati.png)
 
 **Folyamatok pontos menete**
 
@@ -72,7 +74,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 3. A listaoldalon az "Új film felvétele" gombra kattint
 4. Ekkor a "Filmek felvétele" oldalon felviszi az adatokat, elmenti, ezzel új filmet adva hozzá a listához.
 
-![database](images/folyamat_ujfilm.png)
+![database](images/ujFilmFelvFoly.png)
 
 ##Tervezés
 ###Architektúra terv
@@ -83,15 +85,16 @@ Készítette: Dudás Orsolya (PJ1L4K)
   + Főoldal
   + Bejelentkezés
   + Regisztráció
+  + Kategóriák
 
 + **Bejelentkezett:**
   + Főoldal
-  + Filmek listája
-    + Új film felvétele
-    + Film megtekintése
+  + Új film felvétele
+  + Film megtekintése
       + Film törlése
       + Film szerkesztése
       + Film értékelése
+  + Profil megtekintése
   + Kijelentkezés
 
 **Végpontok**
