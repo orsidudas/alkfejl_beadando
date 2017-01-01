@@ -1,4 +1,9 @@
 {% extends 'master' %}
+
+{% block scripts %}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+{% endblock %}
+
 {% block content %}
 {% if old('errors') %}
 <div class="panel panel-danger">
@@ -15,35 +20,43 @@
 </div>
 {% endif %}
 
-<form class="form-horizontal" method="post">
+<form class="form-horizontal" method="post" data-toggle="validator">
    {{ csrfField }}
-   <div class="form-group">
+   <div class="form-group has-feedback">
    <h2>Új film felvétele</h2>
     <hr style="border-bottom:1px solid #e8e8e8;">
       <label for="name" class="col-lg-2 control-label">Cím</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control input-lg" id="title" name="title" placeholder="Cím" >
+         <input type="text" class="form-control input-lg" id="title" name="title" placeholder="Cím" required>
+         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+         <div class="help-block with-errors"></div>
       </div>
    </div>
-   <div class="form-group">
+   <div class="form-group has-feedback">
       <label for="name" class="col-lg-2 control-label">Rendező</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control input-lg" id="director" name="director" placeholder="Rendező">
+         <input type="text" class="form-control input-lg" id="director" name="director" placeholder="Rendező" required>
+         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+         <div class="help-block with-errors"></div>
       </div>
    </div>
-   <div class="form-group">
+   <div class="form-group has-feedback">
       <label for="name" class="col-lg-2 control-label">Kép link</label>
       <div class="col-lg-10">
-         <input type="text" class="form-control input-lg" id="image" name="image" placeholder="Kép">
+         <input type="text" class="form-control input-lg" id="image" name="image" placeholder="Kép" required>
+         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+         <div class="help-block with-errors"></div>
       </div>
    </div>
-   <div class="form-group">
+   <div class="form-group has-feedback">
       <label for="name" class="col-lg-2 control-label">Leírás</label>
       <div class="col-lg-10">
-         <input type="textarea" class="form-control input-lg" id="content" name="content" placeholder="Leírás">
+         <input type="textarea" class="form-control input-lg" id="content" name="content" placeholder="Leírás" required>
+         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+         <div class="help-block with-errors"></div>
       </div>
    </div>
-   <div class="form-group">
+   <div class="form-group has-feedback">
       <label for="category_id" class="col-lg-2 control-label">Kategória</label>
       <div class="col-lg-10">
          <select class="form-control input-lg" id="category_id" name="category_id">
@@ -55,6 +68,8 @@
          >{{ category.name }}</option>
          {% endfor %}
          </select>
+         <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+         <div class="help-block with-errors"></div>
       </div>
    </div>
     <button class="btn btn-default btn-block btn-lg" type="submit">Mentés</button>
