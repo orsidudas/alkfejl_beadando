@@ -1,4 +1,9 @@
 {% extends 'master' %}
+
+{% block scripts %}
+<script src="/scripts/delete.js"></script>
+{% endblock %}
+
 {% block content %}
 <form class="form-horizontal" method="post">
    {{ csrfField }}
@@ -43,8 +48,24 @@
       <p>
       <div class="btn-group btn-group-justified">
          {% if (movie.user_id == currentUser.id) %}
+         {{ csrfField | safe }}
          <a href="/movie/{{movie.id}}/edit" class="btn btn-default btn-lg">Szerkesztés</a>
-         <a href="/movie/{{movie.id}}/delete" class="btn btn-default btn-lg">Törlés</a
+         <a id="btnDelete" href="/movie/{{movie.id}}/delete" class="btn btn-default btn-lg">Törlés</a
+         <span class="help-block"></span>
+
+         <div class="modal fade confirm-modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                <div class="modal-body">
+                    Biztosan törölni szeretnéd?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+                    <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Mégse</button>
+                </div>
+                </div>
+            </div>
+         </div>
          {% endif %}
       </div>
    </fieldset>
