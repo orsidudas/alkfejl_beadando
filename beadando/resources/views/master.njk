@@ -11,8 +11,26 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
       <link rel="stylesheet" href="/style.css">
    </head>
-   <body>
+   <script>
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML =
+        h + ":" + m + ":" + s;
+        var t = setTimeout(startTime, 500);
+    }
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+        return i;
+    }
+    </script>
+   <body onload="startTime()">
       <div class="container">
+      <div id="time"></div>
          <nav class="navbar navbar-default">
             <div class="container-fluid">
                <!-- Brand and toggle get grouped for better mobile display -->
