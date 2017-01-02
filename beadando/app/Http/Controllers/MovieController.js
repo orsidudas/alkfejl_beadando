@@ -190,21 +190,21 @@ class MovieController {
   }
 
   * ajaxDelete(request, response) {
-    // const id = request.param('id');
-    // const movie = yield Movie.find(id);
+     const id = request.param('id');
+     const movie = yield Movie.find(id);
 
-    // if (movie) {
-    //   if (request.currentUser.id !== movie.user_id) {
-    //     response.unauthorized('Access denied.')
-    //     return
-    //   }
+     if (movie) {
+       if (request.currentUser.id !== movie.user_id) {
+         response.unauthorized('Access denied.')
+         return
+       }
 
-    //   yield movie.delete()
-    //   response.ok({
-    //     success: true
-    //   })
-    //   return
-    // }
+       yield movie.delete()
+       response.ok({
+         success: true
+       })
+       return
+     }else{}
 
     response.notFound('No movie')
   }
