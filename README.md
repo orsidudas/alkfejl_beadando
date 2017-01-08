@@ -232,21 +232,21 @@ A tesztesetek a tests mappában találhatóak.
 
 1. Test suite 1: reg_log_add_del
 
-Amit tesztelni fog:
+  Amit tesztelni fog:
 
-+ regisztrálás (név: bodza, email: bodza@bodza.hu, jelszó: bodza)
-+ bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
-+ film hozzáadása
-+ film törlése
+  + regisztrálás (név: bodza, email: bodza@bodza.hu, jelszó: bodza)
+  + bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
+  + film hozzáadása
+  + film törlése
 
 2. Test suite 1: log_add_categories_edit
 
-Amit tesztelni fog:
+  Amit tesztelni fog:
 
-+ bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
-+ film hozzáadása
-+ kategóriák között lépegetés
-+ hozzáadott film szerkesztése
+  + bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
+  + film hozzáadása
+  + kategóriák között lépegetés
+  + hozzáadott film szerkesztése
 
 ###Tesztelési környezet bemutatása a dokumentációban (Selenium telepítése, tesztek futtatása)
 
