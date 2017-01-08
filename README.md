@@ -246,6 +246,7 @@ A tesztesetek a tests mappában találhatóak.
   + bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
   + film hozzáadása
   + kategóriák között lépegetés
+  + hozzáadott film részleteinek megtekintése
   + hozzáadott film szerkesztése
 
 ###Tesztelési környezet bemutatása a dokumentációban (Selenium telepítése, tesztek futtatása)
@@ -265,16 +266,52 @@ A tesztesetek a tests mappában találhatóak.
 4. Felül a slidert Fast-ről Slow-ra állítása
 5. Kattintás a Play entire test suite gombra
 
-
-
-
 ##Felhasználói dokumentáció
 
 ###A futtatáshoz ajánlott hardver-, szoftver konfiguráció
 
+Operációs rendszer: Windows 7/ Windows 10 / Ubuntu
+Egyéb: Mozilla Firefox, JavaScript
+
 ###Telepítés lépései: hogyan kerül a Githubról a célgépre a program, hogyan kell elindítani
 
+1. Kód letöltése:
+  + ZIP letöltése
+  + https://github.com/orsidudas/alkfejl_beadando klónozása (terminál futtatása + git clone ..)
+2. Terminálban a alkfejl_beadando/beadando mappában elvégzendő műveletek: 
+  + npm install
+  + a .env.example fájl másolása és átnevezése .env-re
+  + a kód  futtatás npm run dev vagy npm start paranccsal
+3. Böngészőben (Mozzila/Chrome) localhost:3333 megnyitása
+
 ###A program használata
+
++ Böngészőben nyissuk meg a főoldalt
++ A bal felső sarokban levő ikonra kattintva mindig a főoldalra jutunk
++ A főoldalon szabadon váltogathatunk a filmműfajok között
++ Ha még nem regisztrátunk:
+    + A jobb felső sarokban kattintsunk a Regisztráció gombra
+    + Regisztráció után a bejelentkezési oldalra kerülünk, jelentkezzünk be!
++ Ha már regisztráltunk:
+    + A jobb felső sarokban kattintsunk a Bejelentkezés gombra
+    + Jelentkezzünk be!
++ A főoldalon:
+    + szabadon váltogathatunk a filmműfajok között
+    + rákattinthatunk a filmekre, hogy megnézzük a részletes adataikat
+    + filmeket adhatunk hozzá az adatbázishoz
++ Filmek hozzáadása:
+  + Kattintsunk a főoldalon a Film hozzáadása gombra
+  + Töltsük ki az adatokat
+  + Kattintsunk a Mentés gombra, illetve a Mégse gombra, ha mégsem kívánjuk felvinni az adatokat
++ Filmek részletes megtekintése:
+  + A főoldalon kattintsunk a film névjegyén a Részletek gombra
+  + Valamelyik filmműfaj oldalán kattintsunk a film névjegyén a Részletek gombra
++ Egy adott film szerkesztéséhez kattintsunk a film részletes adatlapján a Szerkesztés gombra (Ha mi adtuk hozzá)
++ Egy adott film törléséhez kattintsunk a film részletes adatlapján a Törlés gombra (Ha mi adtuk hozzá)
++ Egy adott film értékeléséhez a film részletes adatlapján válasszuk ki a számot majd kattintsunk az Értékelés gombra
++ Saját adatlap megtekintéséhez a jobb felső sarokban nyissuk le a fület és válasszuk az Adatlap gombot
++ Az adatlapon megtekinthetjük az adatainkat, az általunk hozzáadott filmeket, illetve ki is választhatjuk őket részletes megtekintésre
++ Kijelentkezéshez a jobb felső sarokban nyissuk le a fület és válasszuk a Kijelentkezés gombot
 
 ###Források
 
