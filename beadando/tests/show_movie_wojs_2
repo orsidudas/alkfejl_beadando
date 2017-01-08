@@ -4,51 +4,21 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:3333/" />
-<title>regisztracio</title>
+<title>show_movie_wojs_2</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">regisztracio</td></tr>
+<tr><td rowspan="1" colspan="3">show_movie_wojs_2</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
+	<td>/2/category</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Filmadatbázis (current)</td>
-	<td></td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>id=btnRegistration</td>
-	<td></td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=username</td>
-	<td>borbala</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=email</td>
-	<td>borbala@borbala.hu</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=password</td>
-	<td>borbala</td>
-</tr>
-<tr>
-	<td>type</td>
-	<td>id=password_confirm</td>
-	<td>borbala</td>
-</tr>
-<tr>
-	<td>click</td>
-	<td>//button[@type='submit']</td>
+	<td>xpath=(//a[contains(text(),'Részletek')])[2]</td>
 	<td></td>
 </tr>
 

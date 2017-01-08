@@ -4,31 +4,36 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:3333/" />
-<title>kijelentkezes</title>
+<title>login_wojs</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">kijelentkezes</td></tr>
+<tr><td rowspan="1" colspan="3">login_wojs</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
-	<td>/</td>
+	<td>/login</td>
 	<td></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Filmadatbázis (current)</td>
+	<td>id=btnLogin</td>
 	<td></td>
 </tr>
 <tr>
-	<td>click</td>
-	<td>css=a.dropdown-toggle</td>
-	<td></td>
+	<td>type</td>
+	<td>id=email</td>
+	<td>bodza@bodza.hu</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>bodza</td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Kijelentkezés</td>
+	<td>//button[@type='submit']</td>
 	<td></td>
 </tr>
 

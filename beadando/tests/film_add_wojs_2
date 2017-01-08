@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:3333/" />
+<title>film_add_wojs_2</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">film_add_wojs_2</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Új film hozzáadása</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=title</td>
+	<td>Snowden</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=director</td>
+	<td>Oliver Stone</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=image</td>
+	<td>https://snowdenfilm.com/img/common/share.jpg</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=content</td>
+	<td>Edward Snowden a hazáját akarta szolgálni. Bár egészségi állapota katonai karrierjének hamar véget vet, informatikusként azonban helyet kap a titkosszolgálatnál. Itt aztán megdöbbentő felfedezést tesz: az amerikai kormány a világon bárkit képes megfigyelni, telefonokat hallgat le, e-maileket olvas el, még a laptopunk kameráin keresztül is képes megfigyelni saját otthonunkban. Snowden, aki szentül hisz a szabadságban és az Amerikai Egyesült Államokban, válaszút elé kerül: vagy ő is asszisztál a kormány illegálisnak vélt és etikátlan cselekedeteihez, vagy nyilvánosságra hozza mindazt, amit megtudott és menekülni kényszerül... </td>
+</tr>
+<tr>
+	<td>select</td>
+	<td>id=category_id</td>
+	<td>label=Dráma</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

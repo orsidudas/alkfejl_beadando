@@ -4,12 +4,12 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:3333/" />
-<title>film_felvetele_hibasan</title>
+<title>reg_wojs</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">film_felvetele_hibasan</td></tr>
+<tr><td rowspan="1" colspan="3">reg_wojs</td></tr>
 </thead><tbody>
 <tr>
 	<td>open</td>
@@ -23,21 +23,31 @@
 </tr>
 <tr>
 	<td>clickAndWait</td>
-	<td>link=Filmadatbázis (current)</td>
-	<td></td>
-</tr>
-<tr>
-	<td>clickAndWait</td>
-	<td>link=Új film hozzáadása</td>
+	<td>id=btnRegistration</td>
 	<td></td>
 </tr>
 <tr>
 	<td>type</td>
-	<td>id=title</td>
-	<td>a</td>
+	<td>id=username</td>
+	<td>bodza</td>
 </tr>
 <tr>
-	<td>click</td>
+	<td>type</td>
+	<td>id=email</td>
+	<td>bodza@bodza.hu</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password</td>
+	<td>bodza</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=password_confirm</td>
+	<td>bodza</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
 	<td>//button[@type='submit']</td>
 	<td></td>
 </tr>

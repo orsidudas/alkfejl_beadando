@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+  <title>Test Suite</title>
+</head>
+<body>
+<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
+<tr><td><b>Test Suite</b></td></tr>
+<tr><td><a href="login_wojs_2">login_wojs_2</a></td></tr>
+<tr><td><a href="film_add_wojs_2">film_add_wojs_2</a></td></tr>
+<tr><td><a href="categories_wojs_2">categories_wojs_2</a></td></tr>
+<tr><td><a href="show_movie_wojs_2">show_movie_wojs_2</a></td></tr>
+<tr><td><a href="film_edit_wojs_2">film_edit_wojs_2</a></td></tr>
+</tbody></table>
+</body>
+</html>
