@@ -104,7 +104,7 @@ Készítette: Dudás Orsolya (PJ1L4K)
 + **POST/login**: bejelentkező adatok felküldése
 + **GET/logout**: kijelentkező oldal
 + **GET/registration**: regisztrációs oldal
-+ **POST/registrationp**: regisztrációs adatok felküldése
++ **POST/registration**: regisztrációs adatok felküldése
 + **GET/movie/create**: új film felvétele
 + **POST/movie/create**: új film felvételéhez szükséges adatok felküldése
 + **GET/movie/:id**: kiválasztott film megtekintése
@@ -264,7 +264,9 @@ Kiválasztott film oldala
   + reg.js kód
   
 ###Szekvenciadiagram
-  
+
+![database](images/szekvencia_d.png)
+
 ##Tesztelés
 
 ###Tesztesetek felsorolása
