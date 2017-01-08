@@ -1,7 +1,7 @@
 $('#btnRegistration').on('click', function (e) {
   e.preventDefault()
 
-  let $modal = $('.modal')
+  let $modal = $('#registrationModal')
   const hasModal = $modal.length
 
   if (hasModal) {
