@@ -223,6 +223,58 @@ Kiválasztott film oldala
   + .env
   + package.json
   + server.js
+  
+##Tesztelés
+
+###Tesztesetek felsorolása
+
+A tesztesetek a tests mappában találhatóak.
+
+1. Test suite 1: reg_log_add_del
+
+Amit tesztelni fog:
+
++ regisztrálás (név: bodza, email: bodza@bodza.hu, jelszó: bodza)
++ bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
++ film hozzáadása
++ film törlése
+
+2. Test suite 1: log_add_categories_edit
+
+Amit tesztelni fog:
+
++ bejelentkezés (email: bodza@bodza.hu, jelszó: bodza)
++ film hozzáadása
++ kategóriák között lépegetés
++ hozzáadott film szerkesztése
+
+###Tesztelési környezet bemutatása a dokumentációban (Selenium telepítése, tesztek futtatása)
+
+**Selenium IDE telepítése:**
+
+1. Mozzila Firefox indítása
+2. Selenium IDE letöltése a https://addons.mozilla.org/hu/firefox/addon/selenium-ide/ oldalról
+3. Mozzila Firefox->Menü megnyitása->Testreszabás->Selenium IDE beillesztése->Kilépés a testreszabásból
+4. Selenium IDE elindítása
+
+**Tesztek futtatása**
+
+1. localhost:3333 megnyitása
+2. JavaScript kikapcsolása a beállításokban (F12->Beállítások)
+3. Fájl->Open Test Suite->"reg_log_add_del" kiválasztása->Megnyitás
+4. Felül a slidert Fast-ről Slow-ra állítása
+5. Kattintás a Play entire test suite gombra
+
+
+
+
+##Felhasználói dokumentáció
+
+###A futtatáshoz ajánlott hardver-, szoftver konfiguráció
+
+###Telepítés lépései: hogyan kerül a Githubról a célgépre a program, hogyan kell elindítani
+
+###A program használata
 
 ###Források
 
