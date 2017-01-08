@@ -258,7 +258,7 @@ Kiválasztott film oldala
 + Film törlésénél felugró ablak:
   + delete.js kód
   + Megkérdezi, biztosan töröljük-e a filmet
-+ Bejelentkezésnél felugro ablak:
++ Bejelentkezésnél felugró ablak:
   + login.js kód
 + Regisztrációnál felugró ablak:
   + reg.js kód
