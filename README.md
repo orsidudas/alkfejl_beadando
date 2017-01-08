@@ -224,6 +224,47 @@ Kiválasztott film oldala
   + package.json
   + server.js
   
+##Progresszív fejlesztés kliensoldali JavaScript segítségével
+
+###A funkcióban érintett fájlok mind kliens- és szerveroldalon
+
++ beadando/resources/views/master.njk
++ beadando/public/scripts/time.js
++ beadando/public/scripts/back.js
++ beadando/public/scripts/forward.js
++ beadando/resources/views/createMovie.njk
++ beadando/app/Http/Controllers/MovieController.js
++ beadando/app/Http/routes.js
++ beadando/public/scripts/delete.js
++ beadando/resources/views/showMovie.njk
++ beadando/app/Http/Controllers/UserController.js
++ beadando/public/scripts/login.js
++ beadando/resources/views/home.njk
++ beadando/public/scripts/reg.js
++ beadando/resources/views/showCategory.njk
+
+###A funkció működésének, folyamatának szöveges leírása
+
++ Óra: 
+  + Folyamatosan mutatja az időt
+  + beadando/public/scripts/time.js kód fut le
+  + lekéri az órát, percet, másodpercet, illetve, ha ezen értékek valamelyike 10-nél kisebb, kiegészíti egy 0-val a formátum miatt
++ Előre/Vissza gombok
+  + forward.js illetve back.js kód
+  + A gombra kattintással elérhető az előző/következő oldal, az oldal history-ját kérik le
++ Film hozzáadás validátor:
+  + Ellenőrzi, hogy kitöltöttünk-e minden mezőt
+  + Ha kitöltöttük, zöld pipával jelzi, ellenben piros x jelzi a hibát
++ Film törlésénél felugró ablak:
+  + delete.js kód
+  + Megkérdezi, biztosan töröljük-e a filmet
++ Bejelentkezésnél felugro ablak:
+  + login.js kód
++ Regisztrációnál felugró ablak:
+  + reg.js kód
+  
+###Szekvenciadiagram
+  
 ##Tesztelés
 
 ###Tesztesetek felsorolása
